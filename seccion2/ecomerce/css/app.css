@@ -32,13 +32,20 @@ h1 span {
        color: #000;
    }
 
+   /* Nos permite centrar el contenido de forma horizontal */
    .contenedor {
        max-width: 1200px;
        /* esto es para cetrar */
        margin: 0px auto;
        /* para centrar en nuevas versiones */
        /* margin-inline: auto; */
+   }
 
+   /* seleccionamos todas las imagenes */
+   img {
+       /* La imagen solo va a tomar el espacio que ese
+        div o contenedor de la imagen tenga disponible */
+       max-width: 100%;
    }
 
 /* HEADER Y NAVEGQACION */
@@ -60,10 +67,20 @@ que es max-width:1200px */
     border-top: 1px solid #e1e1e1;
 }
 .nav-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Cuando es direction row, alineas
+   con jstify-content horizontalment y 
+   align-items verticalment siempre y cuando aiga
+   un height grande*/
+   /* al reves si es flex-direction:column */
+  
   /* border-color: #e1e1e1;
   border-top-style: solid;
   border-width: 1px; */
-  
   padding: 20px 0px;
 }
 
@@ -76,6 +93,31 @@ que es max-width:1200px */
     height: 550px;
 }
 
+/* listado de categorias */
+
+.listado-categorias{
+    display: grid;
+    /* separacion entre grids */
+    gap: 20px;
+    /* puedes colocar anchos especificos a las columnas */
+    /* grid-template-columns: 400px 400px 100px; */
+    
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: 1fr; */
+    /* grid-template-rows: 100px 100px; */
+    /* grid-template-rows: 1fr 1fr; */
+
+}
+/* 
+.categ1 {
+    grid-column: 1 /2;
+}
+.categ2 {
+    grid-column: 2 /3;
+}
+.categ3 {
+    grid-column: 3 /4;
+} */
 /* BOX MODEL */
 .sobre-nosotros{
     background-color: red;
@@ -94,5 +136,6 @@ que es max-width:1200px */
      el tamano del width crece y no respeta el width tamano inicial */
      box-sizing: border-box;
 }
+
 
  
