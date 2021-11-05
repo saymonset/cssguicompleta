@@ -1,0 +1,98 @@
+
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* * { Box-sizing: Border-box } FTW */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+h1 {
+    font-size: 20px;
+    color: #000;
+}
+
+h1 span {
+    color: #037bc0;
+}
+ /* nav.navegacion selecciona toda esa etiqueta */
+ /* nav .navegacion Quere decir que es otro elemento*/
+/* Especifidad */
+/* !important,#, clas, selector o elemento
+1 1 1 1 */
+
+ 
+
+/* GLOBLES */ 
+   a {
+       text-decoration: none;
+       color: #000;
+   }
+
+   .contenedor {
+       max-width: 1200px;
+       /* esto es para cetrar */
+       margin: 0px auto;
+       /* para centrar en nuevas versiones */
+       /* margin-inline: auto; */
+
+   }
+
+/* HEADER Y NAVEGQACION */
+
+.nombre-sitio {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+/* No esta limitado por el .contenedor
+que es max-width:1200px */
+/* por eso la raya se extiende completa a la pagina */
+.contenedor-navegacion{
+    border-top: 1px solid #e1e1e1;
+}
+.nav-principal {
+  /* border-color: #e1e1e1;
+  border-top-style: solid;
+  border-width: 1px; */
+  
+  padding: 20px 0px;
+}
+
+.hero {
+    background-image: url(../img/principal.jpg);
+    background-repeat:no-repeat;
+    /* si quieres ver que la imagen se estire y tome todo 
+    el espacio disponible */
+    background-size: cover;
+    height: 550px;
+}
+
+/* BOX MODEL */
+.sobre-nosotros{
+    background-color: red;
+    width: 200px;
+    padding: 25px; 
+    
+
+    /* Con  Box-sizing: Border-box evitamos el problema
+    de abajo en amnetr el width , pero si aumentara el  hight*/
+
+    /* box-sizing: content-box,  Este es el
+    valor por defecto y aumenta el width original sumando
+    el padding*/
+    /* Si colocas border box, el tamano del height crece */
+    /* Si NO colocas border box,
+     el tamano del width crece y no respeta el width tamano inicial */
+     box-sizing: border-box;
+}
+
+ 

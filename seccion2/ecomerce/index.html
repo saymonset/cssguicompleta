@@ -1,3 +1,6 @@
+<!-- Validamos html con 
+https://validator.w3.org/nu/#textarea -->
+
 <!DOCTYPE html>
 <html lang="zxx">
     <!-- En el head se coloca informacion meta para el navegaor,
@@ -10,23 +13,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- ayuda con e; responsive y design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecommerce - Home</title>
+    <!-- Es un standar que permite colocar los navegadores 
+    de manera igual sus eementos y propiedades -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="css/app.css">
+
+ 
 </head>
 <body>
     <header>
-        <h1>Tienda Muebles</h1>
+        <h1 class="nombre-sitio">Tienda <span> Muebles </span></h1>
     </header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="tienda.html">Tienda</a>
-        <a href="blog.html">Blog</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="contacto.html">Contacto</a>
-    </nav>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</aclass=>
+            <a href="tienda.html">Tienda</a>
+            <a href="blog.html">Blog</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="contacto.html">Contacto</a=>
+        </nav>
+    </div>
+
+     <div class="hero">
+
+     </div>
     
         <section>
-            <h2>Categoria de Producto</h2>
+            <h2>Categoria de <span> Producto </span></h2>
 
             <div>
                 <!-- img solo tiene apertura.. Nunca cierres img en otra etiqueta NO VA </img>-->
@@ -53,7 +69,7 @@
             </div>
         </section>   
 
-        <section>
+        <section class="sobre-nosotros">
             <div>
                 <h2>Sobre Nosotros</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex accusamus accusantium tempore ullam maiores similique eligendi autem nemo! Doloremque sed voluptatum ipsum veritatis explicabo sint culpa, sunt ducimus accusamus. Laboriosam!</p>
@@ -134,7 +150,7 @@
 
       <div>
           <h3>Categorias</h3>
-          <nav>
+          <nav class="navegacion">
               <a href="#">Cocina</a>
               <a href="#">Oficina</a>
               <a href="#">Jadin</a>
