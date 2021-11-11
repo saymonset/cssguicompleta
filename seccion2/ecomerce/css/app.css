@@ -108,6 +108,7 @@ h3{
     padding: 1rem;
     /* para animar */
     transition: background-color .3s ease-out;
+    text-align: center;
 
    }
    .btn:hover {
@@ -118,6 +119,12 @@ h3{
    /* Utilidades */
    .text-center {
          text-align:center;
+   }
+
+   /* obligamos em este caso a los botones no medir mas 300px
+   colocandoles esta etiqueta */
+   .max-width-30{
+       max-width:30rem
    }
 
 /* HEADER Y NAVEGQACION */
@@ -132,7 +139,7 @@ h1 span {
 } */
 
 header {
-    font-size: 10rem;
+    font-size: 3rem;
 }
 
 .nombre-sitio {
@@ -503,3 +510,102 @@ grid-template-columns: 1fr 3fr 1fr;
      margin-top: 5rem;
      text-align: center;
  }
+
+ /* Nosotros */
+  /* Si es posicinamiento de elementos
+ es mejor usar grid  */
+ .contenido-nosotros{
+        display: grid;
+        /* La imgen es mas pequena que el texto
+        y v de primero */
+        grid-template-columns: 1fr 2fr;
+
+        /* Esta instruccion es para que sea 
+        responsive */
+        /* auto-fit hce que el contenido se acomode automaticamente */
+        /* minmax es una funcion de css que toma el valor
+        de minimo y maximo. El minimo es 25rem y si llegamos
+        a 25rem o 250px, asignale cada uno un 1fr  */
+        grid-template-columns: repeat(auto-fit, min-max(25rem,1fr));
+
+
+        /* separamos porque esta muy juntos */
+        column-gap: 4rem;
+ }
+
+ .informacion-nosotros{
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ /* Blog */
+
+ .contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+
+ }
+
+ .entrada {
+     /* cada entrada tiene un separador
+     de bordes */
+     border-bottom: 2px solid #e1e1e1;
+     padding-bottom: 4rem;
+     margin-bottom: 2rem;
+ }
+
+ .entrada:last-of-type{
+     border: none;
+
+ }
+
+ .entrada-meta{
+     display: flex;
+     justify-content:space-between ;
+ }
+
+ /* selcciono todos los parrafos de entrada-meta */
+ .entrada-meta p {
+     /* ancho de la fuene letra */
+     /* secoloca negritas */
+     /* <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet"> */
+     /* aquiestan los tamanos de fuente que existen wght@0,400;0,700;0,900;1,400 */
+     /* sustitir 700 por bold tambien es valido
+     font-weight:bold; */
+     font-weight:700; 
+
+ }
+
+ .entrada-meta span {
+color: #037bc0;     
+}
+
+.contenido-entrada-blog{
+    /* Establecemos el ancho delcontenido */
+    width: 60rem;
+    /* un magen izquierda, dercha en auto para centrar */
+    margin: 0 auto;
+}
+
+/* Galeria */
+
+.galeria{
+    /* Quitamo el stilo a los ul que 
+    no es atractivo y lo trae por defecto; */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* cambiamos la apariencia  de las imagenes */
+.galeria img {
+    height: 40rem;
+    width: 40rem;
+    /* se ajusta al tamano correctamente */
+    object-fit: cover;
+}

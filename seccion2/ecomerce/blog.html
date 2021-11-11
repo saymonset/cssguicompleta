@@ -1,0 +1,155 @@
+<!-- Validamos html con 
+https://validator.w3.org/nu/#textarea -->
+
+<!DOCTYPE html>
+<html lang="zxx">
+    <!-- En el head se coloca informacion meta para el navegaor,
+    coo se va a mostrar este sitio o infomacion importante de este sitio como
+    puede ser el lenguaje -->
+<head>
+    <!-- caracteres especiales como la enie o acento -->
+    <meta charset="UTF-8">
+    <!-- Da encabezado al navegador -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ayuda con e; responsive y design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce - Blog</title>
+    <!-- Es un standar que permite colocar los navegadores 
+    de manera igual sus eementos y propiedades -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Fuentes de google scojiidas por me  -->
+    <!-- /* para instalar nuevas fuentes, ir a 
+    https://fonts.google.com/ */ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+
+ 
+</head>
+<body>
+    <header>
+        <h1 class="nombre-sitio">Tienda <span> Muebles </span></h1>
+    </header>
+    <div class="contenedor-navegacion">
+        <nav class="nav-principal contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</aclass=>
+            <a href="tienda.html">Tienda</a>
+            <a href="blog.html">Blog</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+ 
+    
+ 
+
+    <main class="contenido-principal contenedor"> 
+        <h2 class="text-center">Nuestro Blog</h2>
+
+        <section class="contenedor-blog">
+            <!-- me apoyo creando un nuevo div llamado 
+            blog para tener dos columna (div y aside)
+            en el grid .contenedor-blog -->
+            <!-- div es el contenedor de article -->
+            <div class="blog">
+                <!-- Article es una etiqueta auto epreesentativa
+                opor si misma -->
+                 <article class="entrada">
+                     <header>
+                         <h2>Guia de Colores</h2>
+                         <div class="imagen">
+                             <img src="/img/nosotros.jpg" alt="Imagen Blog">
+                         </div>
+                         <div class="entrada-meta">
+                             <!-- span es muy util para cambiar la apariencia de 
+                             un elemento -->
+                             <!-- etiueta <em> es enfasis</em> -->
+                             <p>Fecha: <span>22 de Octbre 2022</span></p>
+                             <p>Escrito por: <span>TiendaMuebles</span></p>
+                         </div>
+                         <div class="entrada-blog">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis saepe magnam molestias commodi corporis suscipit corrupti assumenda error neque, aliquid, id accusantium earum natus est beatae ipsam odit temporibus.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis saepe magnam molestias commodi corporis suscipit corrupti assumenda error neque, aliquid, id accusantium earum natus est beatae ipsam odit temporibus.</p>
+                         </div>
+                     </header>
+                     <a href="entrada.html" class="btn max-width-30">Leer</a>
+                 </article>
+                 <article class="entrada">
+                    <header>
+                        <h2>Guia de Colores</h2>
+                        <div class="imagen">
+                            <img src="/img/nosotros.jpg" alt="Imagen Blog">
+                        </div>
+                        <div class="entrada-meta">
+                            <!-- span es muy util para cambiar la apariencia de 
+                            un elemento -->
+                            <!-- etiueta <em> es enfasis</em> -->
+                            <p>Fecha: <span>22 de Octbre 2022</span></p>
+                            <p>Escrito por: <span>TiendaMuebles</span></p>
+                        </div>
+                        <div class="entrada-blog">
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis saepe magnam molestias commodi corporis suscipit corrupti assumenda error neque, aliquid, id accusantium earum natus est beatae ipsam odit temporibus.</p>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis saepe magnam molestias commodi corporis suscipit corrupti assumenda error neque, aliquid, id accusantium earum natus est beatae ipsam odit temporibus.</p>
+                        </div>
+                    </header>
+                    <a href="entrada.html" class="btn max-width-30">Leer</a>
+                </article>
+            </div>
+            <aside>
+                  <h3>Otras Entrada de Blog</h3>
+                  <ul>
+                      <li><a href="entrada.html">Guia de colores</a></li>
+                      <li><a href="entrada.html">Nuevos Modelos</a></li>
+                      <li><a href="entrada.html">Guia para diseno de interiores</a></li>
+                      <li><a href="entrada.html">Guia para diseno de exteriores</a></li>
+                  </ul>
+            </aside>
+        </section>
+       
+
+    </main>
+
+    <footer class="site-footer"> 
+        <div class="grid-footer contenedor">
+            <div>
+                <h3>Categorias</h3>
+                <nav class="footer-menu">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jadin</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorios</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Sobre Nosotros</h3>
+                 <nav class="footer-menu"> 
+                  <a href="#">Nuestra Historia</a>
+                  <a href="#">Mision, Vision y Valores</a>
+                  <a href="#">Carreras</a>
+                  <a href="#">Politicas de privacidad</a>
+                  <a href="#">Terminos del servicio</a>
+                 </nav>
+            </div>
+      
+            <div>
+                <h3>Soporte</h3>
+                <nav  class="footer-menu"> 
+                  <a href="#">Preguntas frecuentes</a>
+                  <a href="#">Ayuda en linea</a>
+                  <a href="#">Confianza y Seguridad</a>
+                </nav>
+            </div>   
+        </div>
+       
+
+    
+        <p class="copyright">Todos los derechos reservados, Tiendas Muebles</p>
+            
+    </footer>
+</body>
+</html>
