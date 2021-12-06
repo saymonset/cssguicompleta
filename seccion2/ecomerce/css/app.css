@@ -109,10 +109,15 @@ h3{
     /* para animar */
     transition: background-color .3s ease-out;
     text-align: center;
-
+    /* Todos los inputs tipo submits 
+    o tipo texto  tienen border,
+    Con esta clase los eliminamos */
+    border:none;
    }
    .btn:hover {
         background-color: #769c02;
+        /* Ponemos una mano , apenas pasemos el cursors por aca */
+        cursor: pointer;
    }
 
  
@@ -608,4 +613,76 @@ color: #037bc0;
     width: 40rem;
     /* se ajusta al tamano correctamente */
     object-fit: cover;
+}
+
+/**Formulario*/
+.formulario {
+    /* max de ancho 600px, de hay no va a pasar */
+    max-width: 60rem;
+    /* Para que el contenido este centrado */
+    margin:  0 auto;
+}
+
+/* Para seleccionar la etiqueta fieldset */
+.formulario fieldset {
+    /* border-color:#000;
+    border-width: 1px; */
+    /* Lo mismop de arriba, aplico abajo */
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.formulario legend {
+    background-color: #005485;
+    /* Ese color quiero que abarque 
+    todo el ancho disponible */
+    width: 100%;
+    /* texto para centrarlo */
+    text-align: center;
+    /* blanco el texto */
+    color: #fff;
+    /* Para hacerlos mayusculas */
+    text-transform: uppercase;
+    /* Esto para colocarlos como en negrita */
+    /* Las fuentes soporta 900que es mas oscuro */
+    font-weight: 900;
+    /* Si se quiere espacio hacia adentro de 20px */
+    padding: 1rem;
+    /* Quiero separacion entre los legend y los campos */
+    margin-bottom: 4rem;
+}
+
+/* alinearemos los campos */
+.campo{
+    display: flex;
+    /* separar cada uno de los camos que esta muy juntos */
+    margin-bottom: 2rem;
+
+}
+.campo label {
+    /* Es el maximo ancho que tomara los labels,
+    en este caso 100px y obligara a estar alineados
+    todos los textos */
+    /* Forzamos a que tenga una base con flex box de 10rem
+    para alinear los labels, si no se hace, tomara el
+    ancho necesario y quedara desalineado */
+    flex-basis: 10rem;
+}
+
+/* .campo .input { */
+    /* .campo input[type="text"],
+    .campo input[type="tel"],
+    .campo input[type="email"], */
+    /* hace los mismo de arriba , pero mas eeral e excluyendo los
+    que no queremos */
+    .campo input:not( [type="radio"] ),
+    .campo textarea,
+    .campo select   {
+    /* Si le coloco flex =1, tomara tdo el campo disponible */
+    /* El tiene factor de crecimiento y va a tomar el espacio que este disponible sumando 1px cada ves */
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    /* Esto clocara mas grande nuestro input con paddin 1rem */
+    padding: 1rem;
+
 }

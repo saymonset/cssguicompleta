@@ -49,8 +49,125 @@ https://validator.w3.org/nu/#textarea -->
 
     <main class="contenido-principal contenedor"> 
         <h2 class="text-center">Contacto</h2>
-       
+       <form action="url" class="formulario">
 
+        <!-- El <fieldset></fieldset> es un agrupador
+de campos que esten relacdionado uno con otros.Te da un marco en los campos el fieldset -->
+           <fieldset>
+               <!-- <legend> Es el texto que describe a este 
+            fieldset  -->
+               <legend>Tus Datos</legend>
+               <!-- Estos por defecto tienen display inline -->
+               <!-- Para colocarlos hacia abajo, le colocamos
+               un div que tiene un display de block -->
+               <div class="campo">
+                   <label for="nombre">Nombre:</label>
+                   <!-- Si colocas required y le das submit, se va automatcamente a este campo y
+                   sale un aviso que se requiere-->
+                   <input id="nombre" 
+                          class="input"
+                          required
+                          type="text" 
+                          value=""
+                          placeholder="Coloca tu nombre">
+               </div>
+               <div class="campo">
+                    <label for="asunto">Asunto:</label>
+                    <input  id="asunto" 
+                            class="input"
+                            type="text" 
+                            value=""
+                            placeholder="Asunto">
+                        </div>        
+             
+                        <div class="campo">
+                             <label for="email">Email:</label>
+                             <input  id="email" 
+                                     type="email" 
+                                     value=""
+                                     placeholder="Email">
+                          </div> 
+
+               <div class="campo">
+                    <label for="telefono">Telefono:</label>
+                    <input  id="telefono" 
+                            type="tel" 
+                            value=""
+                            placeholder="Telefono">
+               </div> 
+
+               <div class="campo">
+                <label for="fecha">Fecha:</label>
+                <input  id="fecha" 
+                        type="date" 
+                        value=""
+                        placeholder="Fecha">
+               </div> 
+
+               <div class="campo">
+                <label for="msg">Fecha:</label>
+                <textarea name="msg" id="msg" 
+                           cols="30" rows="10">
+                        hellos</textarea>
+               </div> 
+           </fieldset>
+
+           <fieldset>
+               <legend>Pais</legend>
+               <div class="campo">
+                   <label for="pais">Pais</label>
+                   <!-- Los atributos que tiene el option,
+                   uno es el selected -->
+                   <select name="" id="pais">
+                       <!-- colocamos disabled para no permitir escoger este valor -->
+                       <option disabled value="">-- Seleccione -- </option>
+                       <option  value="mexico">Mexico</option>
+                       <option value="peru">Peru</option>
+                       <option value="col">Colombia</option>
+                       <option value="argentina">Argentina</option>
+                       <option selected value="espana">Espana</option>
+                       <option value="chile">Chile</option>
+                   </select>
+               </div>
+           </fieldset>
+
+           <fieldset>
+               <legend>Informacion Extra</legend>
+               <div class="campo">
+                   <label for="cliente">Cliente</label>
+                   <!-- name es el qu une a los radiobuttons -->
+                   <input type="radio" id="cliente" value="cliente" name="tipo">
+               </div>
+               <div class="campo">
+                <label for="proveedor">Proveedor</label>
+                <input type="radio" id="proveedor" value="proveedor" name="tipo">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Informacion Extra</legend>
+            <div class="campo">
+                <label for="categoria">Categoria de Interes</label>
+                <!-- Es una lista filtrada a medida qe vas seleccionando.. 
+                Puedes ver los navegadores compatibles aqui
+                https://caniuse.com/
+                -->
+                <input list ="categorias" name="categorias">
+                <datalist id="categorias">
+                      <option value="Cocina"> 
+                      <option value="Exterior"> 
+                      <option value="Recamaras"> 
+                      <option value="Oficina"> 
+                      <option value="Television"> 
+                </datalist>
+            </div>
+       </fieldset>
+
+        <!-- <input type="submit" value="Enviar formulario"> -->
+        <button type="submit"
+                class="btn">Enviar formulario</button>
+       </form>
+        
     </main>
 
     <footer class="site-footer"> 
