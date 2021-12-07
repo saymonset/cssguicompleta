@@ -189,3 +189,31 @@ flex-wrap: wrap;
 .d-flex-10 .box {
     flex-basis: 33.3%;
     }
+
+    .d-flex-11 {
+        display: flex;
+        /* Si quiero que las cajas se adminstren en el conenedor de d-flex-10, tengo
+        colocar wrap */
+        flex-wrap: wrap;
+        }
+        
+        /* Por defecto no crecen los elementos, ybse colocan de izq a derecha */
+
+        .d-flex-11 .box:nth-child(1) {
+            /* para que crezcan las cajas flexibles */
+            /* Es el factor de crecimiento es cero por default. Se coloca 1 para que crezca */
+
+            /* flex-grow: 1; */
+            /* factor crecimiento de 2 */
+            flex-grow: 2;
+            }
+
+            .d-flex-11 .box:nth-child(2) {
+            /* factor crecimiento de 1*/
+                flex-grow: 1;
+            }
+
+            .d-flex-11 .box:nth-child(3) {
+            /* factor crecimiento de 1*/                
+                flex-grow: 1;
+            }
