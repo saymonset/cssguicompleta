@@ -165,14 +165,21 @@ h1, h2 {
 /** 9 **/
 .grid-9 {
     display: grid;
+    /* Con la altura de 120rem o 1200px se va a estirar bastante para darle forma a una pagina */
     height: 120rem;
+    /* Con areas, tu dibujas tu sitio web */
+    /* Las areas trabajan de la siguiente manera: Si tienes tres columnas, debes especificar tres areas */
+
     grid-template-areas: "header header header"
                          "nav nav nav"
                          "contenido contenido sidebar"
                          "footer footer footer"
     ;
 
+    /* No nos escapamos de definir las columnas */
+
     grid-template-columns: repeat(3, 1fr);
+    /* Aqui le damos forma al ancho de las filas para la pagina */
     grid-template-rows: 2.5fr 1fr 6fr 2.5fr;
     gap: 4rem;
 }
@@ -180,6 +187,8 @@ h1, h2 {
     margin: 0;
 }
 
+/* Vamos a posicionar el header del html con el grid de css
+El primer child  es header  y lo posicionmos en el area llamada header */
 .grid-9 .box:nth-child(1) {
     grid-area: header;
 }
