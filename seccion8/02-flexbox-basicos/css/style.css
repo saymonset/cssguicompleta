@@ -178,3 +178,14 @@ h1, h2 {
     /* -1 em para que tenga la columna algo de separaxin */
     /* flex-basis: calc(33.3% - 1rem); */
 }
+
+.d-flex-10 {
+display: flex;
+/* Si quiero que las cajas se adminstren en el conenedor de d-flex-10, tengo
+colocar wrap */
+flex-wrap: wrap;
+}
+
+.d-flex-10 .box {
+    flex-basis: 33.3%;
+    }
