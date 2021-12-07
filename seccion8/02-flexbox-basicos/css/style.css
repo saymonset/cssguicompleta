@@ -61,9 +61,120 @@ h1, h2 {
     font-size: 4rem;
     border: 1rem solid #bb2b03;
 }
-
+ 
 .contenedor > div {
     background-color: var(--blanco);
     padding: 5rem;
 }
 /*** 1 ***/
+.d-flex{
+    /* Se coloca de izq a der porque por default hay un flex direction en row */
+    display: flex;
+}
+/**2**/
+.d-flex-2{
+    display: flex;
+    /* Lo trae por  defecto */
+    /* valores: column, column-revrse, row-reverse */
+    flex-direction: row;
+}
+/**3**/
+.d-flex-3{
+    display: flex;
+    /* justify-content: flex-start es por default */
+    /* space-around, space-evenly, space-between */
+    justify-content: flex-start;
+}
+
+.d-flex-4 {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    justify-content: flex-end;
+}
+
+
+.d-flex-5 {
+    display: flex;
+    height: 700px;
+    /* alogn-tems, sirve para ainear verticalmente cuando es row */
+    /* Si no se coloca ilign-item, los hijos de flex tomaran todo el espacio verticalmente que es 700px */
+    /* Aqui ya ocupan un pequeno espacio alineados al principio de verticalmene */
+    /* align-items: flex-start; */
+    /* El default de align-items es stretch */
+    /* align-items: stretch; */
+    /* Si coloco center, lo que hace es centrarlo en esos 700px de altura */
+    align-items: center;
+}
+
+/* align items cuando el display es columna */
+.d-flex-6 {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    /* Si quieres alinearlo a la izquierda, es con align-items y ya no con justify-content porque
+    es por columna*/
+    align-items: flex-start;
+    /* align-items: flex-end;
+    align-items: center;
+    /* se estira */
+    /*align-items: stretch; */
+}
+.d-flex-7 {
+    display: flex;
+    flex-direction: row;
+    height: 800px;
+
+    /* Estos tres estan por defecto cuando usas flex-direction: row; */
+    /* flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch; */
+}
+
+/* Practicar flex con FLEXBOX FROGGY */
+/* flexboxfroggy.com */
+
+.d-flex-8 {
+    display: flex;
+}
+
+/* para seleccionar cada una de las cajas */
+.d-flex-8 .box{
+
+    /* Se adapta al ancho de cada caja y los repate de manera equitativa */
+    /* Si una caja el contenido es mas grande, le das mas ancho a esa caja de manera inteligente */
+    /* width es forzoso ese tamano */
+    /* flex-basis es el tamano inicial, El contenido a partir de hay comienza a hacer flexible
+    para darle ancho a un elemento */
+    flex-basis: 33.3%;
+    flex-basis: 200px;
+}
+
+.d-flex-9 {
+    display: flex;
+    /* Se cea espacio para soporte a todos los navegadores sin usar gap */
+    justify-content: space-between;
+}
+/* queremos que la primera caja tome la mitad  el resto 25% */
+/* Seleccionamos la primera caja */
+.d-flex-9 .box:nth-child(1){
+    /* - 1rem para que tenga la columna alvo de separacion */
+   flex-basis: calc(50% - 1rem);
+}
+.d-flex-9 .box:nth-child(2),
+.d-flex-9 .box:nth-child(3){
+    /* - 1rem para que tenga la columna alvo de separacion */
+   flex-basis: calc(25% - 1rem);
+}
+/* para seleccionar cada una de las cajas */
+.d-flex-9 .box {
+    /* Es el valor de ancho inicial y como no hay mas espacio, van a tomar 
+    practicamente el 100% */
+    /* flex-basis: 33.3%; */
+    /* gap anade separacion en cada una de las columnas */
+    /* gap:2rem; */
+    /* Calc es una funcion como el lenguaje de programacion */
+    /* Se cea espacio para soporte a todos los navegadores sin usar gap */
+    /* -1 em para que tenga la columna algo de separaxin */
+    /* flex-basis: calc(33.3% - 1rem); */
+}
