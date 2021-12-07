@@ -149,10 +149,16 @@ h1, h2 {
 .grid-8 {
     display: grid;
     grid: repeat(2, 20rem) / repeat(3, 1fr);
+    
+    /* column-gap: 4rem;
+    row-gap: 4rem; */
+    /* gap: 4rem 1rem; separacion de filas 4 rem y columnas 1 rem */
+    /* aqui colocamos separacion de columnas  y filas, misma valor*/
     gap: 4rem;
 }
 
 .grid-8 .box {
+    /* Quitamos los magenes que trae por defecto */
     margin: 0;
 }
 
