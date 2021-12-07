@@ -131,7 +131,17 @@ h1, h2 {
 .grid-7 {
     display: grid;
     /* grid-template-columns: 2fr repeat(2, 1fr); */
+    /* Creo dos filas y mide 50rem. Creo 3 columnas y miden 1fr */
+    /* La fraccion es mas optima a dar espacio a cadadiv */
+    /* Un row si no tiene altura, va a llenar su espacio de acuerdoa  su contenido de acuerdo
+    a los valores padding , margin, borders y contenido.
+    Por ejemplo height:500px */
+   /* aqui forzamos a que la altura de sus filas sea 50rem */
     grid: repeat(2, 50rem) / repeat(3, 1fr);
+
+    /* Creame 3 columnas. La prmera es de 2fr y las otras dos columnas de 1fr
+     */
+     /* grid-template-columns: 2fr repeat(2, 1fr); */
 }
 
 /* 8 **/
