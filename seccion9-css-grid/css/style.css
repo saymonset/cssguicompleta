@@ -246,6 +246,7 @@ El primer child  es header  y lo posicionmos en el area llamada header */
 .grid-11 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    /* Las columnas crecen con 300 px */
     height: 300px;
 }
 
@@ -255,9 +256,14 @@ El primer child  es header  y lo posicionmos en el area llamada header */
 
 .grid-12 {
     display: grid;
+    /* Auto fill crea columnas mientras halla espacios disponibles, y el espacio disponible
+    crea y quedan vacias pero ya dividido */
     grid-template-columns: repeat( auto-fill, 200px);
+    /* AutoFit solo te crea las unicamentes las que hay necesarias */
     grid-template-columns: repeat( auto-fit, 200px);
 
+    /* Si es responsive, el valor minimo es de 200px, si llega menos a 200px, salta la linea y te conserva
+    esos 200px. Si es mas de 200px, te coloca es una fraccion. 1fr */
     grid-template-columns: repeat(auto-fit, minmax( 200px, 1fr ) );
     grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr ) );
 }
