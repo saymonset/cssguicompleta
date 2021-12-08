@@ -208,14 +208,18 @@ El primer child  es header  y lo posicionmos en el area llamada header */
 
 /** 10 **/
 
+/* Grid template incluye las areas, las columnas y los rows */
 .grid-10 {
     display: grid;
     height: 120rem;
+    /* En grid-template estan las areas con los rows */
     grid-template: "header header header" 2.5fr
                     "nav nav nav" 1fr
                     "contenido contenido sidebar" 6fr
                     "footer footer footer" 2.5fr / 1fr 1fr 1fr
     ;
+      /* Despues del slash, estamos especificando las columnas "footer footer footer" 2.5fr / 1fr 1fr 1fr */
+      /* En este caso es de 1 fr y son tres columnas / 1fr 1fr 1f */
     gap: 4rem;
 }
 .grid-10 .box {
