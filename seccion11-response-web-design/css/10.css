@@ -1,4 +1,8 @@
+/* Aplicamos a todas las imagenes un max de width de 100% */
+/* Colocamos este snipet en los proyectos y no vamos a tener problemas en el responsive con imagenes */
 img {
     max-width: 100%;
+    /* Lasimagenes tienden a tener un espqacio en la parte inferior.
+    Con display: block, quitamos ese espacio */
     display: block;
 }
