@@ -1,3 +1,5 @@
+/* Como el padre es .header, y el hijo es .descripcion, Su especifidad es mayor
+y el navegador tiene mas probabilidad alta en tomarla */
 .header .descripcion {
     color: red;
 }
