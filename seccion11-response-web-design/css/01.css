@@ -11,8 +11,13 @@
     margin: 0;
 }
 
+
+/* No esta soportada la unidad de rem en media query */
+/* Es mucho mejor trabaar con rem para todos los dispositivos */
+  /* De cero a 600 px, aplica tdoos elcodigo css que se implenebta en este media query */
 @media ( max-width: 600px ) {
     .oferta {
+        /* Aqui se sobreescribe de los codigos que estan globales para .oferta*/
         max-width: 30rem;
     }
     .precio {
