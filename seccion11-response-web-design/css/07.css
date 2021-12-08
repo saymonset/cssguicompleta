@@ -1,5 +1,7 @@
 .contenedor-responsive {
     background-color: #ffffff;
+/* Voy a tomar maximo 1000px, y si la pantalla es menos de 1000px, agarro el 90% */
+
     width: min(90%, 1000px);
     height: 400px;
     margin: 0 auto;
