@@ -1,7 +1,13 @@
+
+/* Buscate todos ancla que finalice  con .com
+[href$=".com"] */
 a[href$=".com"] {
     color: red;
 }
 
 #telefono {
+    border: 5px solid red;
+}
+input[type="tel"]{
     border: 5px solid red;
 }
