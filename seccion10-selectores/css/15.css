@@ -1,7 +1,9 @@
+/* Escoger la primera letra. First-letter de una linea */
 .primer-letra::first-letter {
     font-size: 20rem;
 }
 
+/* Escogemos la primera linea del texto que arropa esta class */
 .primer-linea::first-line {
     font-size: 4rem;
 }

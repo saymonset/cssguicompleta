@@ -1,3 +1,4 @@
+/* Eliminando o gnorando multiles elementos de un elemento parrafo */
 p:not(.texto):not(.oferta) {
     color: red;
 }
