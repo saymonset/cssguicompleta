@@ -1,3 +1,6 @@
+/* DesktopFirst, se hace el codigo sin necesidad de media query para que se vea bien
+en una pantalla de escritorio y de hay se empieza a justar para los diferentes dispositivos
+moviles */
 .oferta {
     background-color: #00446e;
     padding: 2rem;
@@ -10,7 +13,8 @@
     margin: 0;
 }
 
-
+ /* Si vas a trabajar con destock first, primero los medias query hayq eu colocaros\
+ del mas grande al mas pequeo para ajustar los dispositivos moviles */
 @media (max-width:800px) {
     .oferta {
         max-width: 40rem;
@@ -18,7 +22,8 @@
 }
 
 
-
+/* Lo qud este por fuera de los media query es desktopfirst, y aplica a tamano de escritorio */
+/* max-width: 600px; aplica para 0 px hasta los 600px y es para los dispositivo moviles */
 @media (max-width: 600px) {
     .oferta {
         max-width: 100%;

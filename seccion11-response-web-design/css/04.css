@@ -9,6 +9,8 @@
     margin: 0;
 }
 
+/* Aplica el mediaquery de 600 a 800px y luego despues de 1200px */
+
 @media (min-width: 600px) and (max-width: 800px), (min-width: 1200px)  {
     .oferta {
         background-color: yellow;
