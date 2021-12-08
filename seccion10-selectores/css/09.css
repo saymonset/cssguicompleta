@@ -1,3 +1,6 @@
+
+/* Ese + significa que ve al siguiente nivel despues de ese div */
+/* Es el segundo hijo del padre que es .admin */
 .admin div + p {
     background-color: red;
 }
