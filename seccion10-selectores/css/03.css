@@ -8,6 +8,11 @@
 .mayusculas {
     text-transform: uppercase;
 }
+
+/* Este contiene la clase texto con la clase mayuscula */
+/* Si lo colocas de esta forma con espacio, ya es un selector diferente .texto .mayusculas y quiere
+decir que es un hijo de este .texto */
+/* El orden de ls clases no importa */
 .texto.mayusculas {
     font-size: 10rem;
 }
