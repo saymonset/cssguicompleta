@@ -1,3 +1,5 @@
+/* Se escribe un codigo con  para movil first y luego con destock first se acomoda constmedia query */
+
 .oferta {
     background-color: #00446e;
     padding: 2rem;
@@ -9,6 +11,9 @@
     margin: 0;
 }
 
+
+/* Esto es trabajar como movilfirst */
+/* min-width:600px significa que de 0 a 599 se va a ignorar este media query */
 @media (min-width: 600px ) {
     .oferta {
         max-width: 40rem;
