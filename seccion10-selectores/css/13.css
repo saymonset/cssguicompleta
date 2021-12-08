@@ -1,3 +1,9 @@
+/* (2n + 1) ,Esto lo que hace es.. 2 multiplicar por cero + 1 .
+(2 X (0) + 1) = 1 */
+/* Aplicar a numeros impares es :  ul li:nth-child(odd) */
+/* Aplicar a numeros pares es :  ul li:nth-child(even) */
+
+/* Aqui aplicamos de cuatro en cuatro ul li:nth-child(4n + 4) */
 ul li:nth-child(4n + 4) {
     border: 2px solid red;
 }
