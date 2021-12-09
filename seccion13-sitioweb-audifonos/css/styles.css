@@ -201,7 +201,7 @@ desde 768px en adelante */
     background-repeat: repeat, no-repeat;
     background-size: 100%, 110rem;
 }
-
+/* Si estos dos estan presentes en el navegador .notavif.notwebp entonces */
 .notavif.notwebp .sobre-tech {
     /* El primer color es transparente y va a cubrir el 50%,
     La segunda imagen es de color primario y se deja en 0%  para que lo llene tod de color azul
@@ -209,9 +209,12 @@ desde 768px en adelante */
 
     background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg);
 }
+
+/* si soporta .webp */
 .webp .sobre-tech {
     background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.webp);
 }
+/* si soporta .avif */
 .avif .sobre-tech {
     background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.avif);
 }
@@ -467,6 +470,7 @@ desde 768px en adelante */
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 900;
+    /* nunca tienen border */
     border: none;
 }
 
