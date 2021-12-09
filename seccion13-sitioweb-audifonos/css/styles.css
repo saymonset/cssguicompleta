@@ -193,12 +193,20 @@ desde 768px en adelante */
 
 /** Sobre Tech PRO **/
 .sobre-tech {
+    /* Colocamos la position right para que tome e lao derecho de la imagen y se 
+    vea la mujer con los audifonos */
     background-position: right;
+    /* Se coloca dos repeat, uno es para que el color si se repita y el otro repeat es
+    para que la imagen no se repita */
     background-repeat: repeat, no-repeat;
     background-size: 100%, 110rem;
 }
 
 .notavif.notwebp .sobre-tech {
+    /* El primer color es transparente y va a cubrir el 50%,
+    La segunda imagen es de color primario y se deja en 0%  para que lo llene tod de color azul
+    El 50% transparente es donde va la imagen, entonces  con la url, cargamos la imagen */
+
     background-image: linear-gradient( to bottom, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg);
 }
 .webp .sobre-tech {
