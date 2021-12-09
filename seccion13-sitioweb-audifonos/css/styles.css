@@ -1,4 +1,6 @@
+/* Asi es como se crea un custom properies :root */
 :root {
+    /* Las variables empiezan con -- */
     --primario: #1073BA;
     --secundario: #00DA55;
     --gris: #3B3B3B;
@@ -7,7 +9,7 @@
     --grisClaro: #e1e1e1;
 
     --separacion: 5rem;
-
+     /* Esta fuente es traida por google */
     --fuentePrincipal: 'Roboto', sans-serif;
     --fuenteSecundaria: 'Lato', sans-serif;
 }
@@ -21,6 +23,7 @@ html {
 }
 
 body {
+    /* Asi se usan las custom properties. Se empieza con var y su nombre variable:  var(--fuentePrincipal) */
     font-family: var(--fuentePrincipal);
     font-size: 1.6rem;
     line-height: 1.5;
