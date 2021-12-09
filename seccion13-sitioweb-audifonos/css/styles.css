@@ -77,9 +77,20 @@ img {
 /** Degradados **/
 
 .degradado-verde {
+    /* Con esto, el texto ya no tiene color blanco y con gradient
+    y estamos asignando que el background debe asignarse al texto
+    con background-clip */
+
     color: transparent;
+    /* Este degradado va de izquierda a derecha.. Por eso colocamos .to right */
     background: linear-gradient(to right, var(--primario) 0%, var(--secundario) 100% );
+
+    /* Algunos propiedades necesitan el prefijo -webkit
+    Si no se coloca, no funciona en chrome */
     -webkit-background-clip: text;
+    /* Primero creamos el backgroud, luego background-clip y preguntamos
+    A que parte de ese elemento vas agregar el background */
+    /* En este caso lo agregamos al texto */
     background-clip: text;
 }
 
