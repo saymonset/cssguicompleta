@@ -36,14 +36,20 @@ body {
 
 /** Globales **/
 .contenedor {
+    /* max-width Esto hace que nunca pase los 1200px */
     max-width: 120rem;
+    /* Width dice que yo voy a tomar el 90% disponible */
+    /* Si es menos de 1200px  establecidos por max-width, entonces tomare el 90% */
     width: 90%;
+    /* para centrar */
     margin: 0 auto;
 }
 
+/* Buenas practicas definir estos h */
 h1, h2, h3 {
     font-weight: 900;
     font-family: var(--fuenteSecundaria);
+    /* El margen abajo y arriba de Hn es 2.5 rem haciendo el calculo */
     margin: calc( var(--separacion) / 2 ) 0 ;
 }
 h1 {
@@ -55,6 +61,8 @@ h2 {
 h3 {
     font-size: 2.8rem;
 }
+
+/* Aqui establecemos nuestrqs imagenes responsive */
 img {
     max-width: 100%;
     display: block;
