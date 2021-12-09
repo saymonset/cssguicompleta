@@ -385,13 +385,20 @@ desde 768px en adelante */
 }
 
 /** Newsletter*/
-.newsletter {
 
+
+
+.newsletter {
+    /* La foto que este la parte de arriba y centrada */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100%, 70rem;
 }
 .notavif.notwebp .newsletter {
+    /* Una imagen y un color blanco de fondo transparente */
+    /* Va a ir de arriba hacia abajo , por eso colocamos bottom */
+    /* Su color de fondo va hacer transparente hasta el 50%, luego sera blanco desde el 0% a partir del50% */
+    /* Despues de fondo vendra la imagen con url y solo se vera xcuando es transparente el primer bloque */
     background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg) ;
 }
 
@@ -427,6 +434,7 @@ desde 768px en adelante */
 
 .contenido-newsletter {
     display: grid;
+    /* dos filas  y una altura de 30rems */
     grid-template-rows:repeat(2, 30rem);
     gap: var(--separacion);
 }
