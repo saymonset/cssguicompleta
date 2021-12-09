@@ -290,6 +290,7 @@ desde 768px en adelante */
     flex-direction: column-reverse;
 }
 
+/* Aplica de una laptop a una maquina mas grande */
 @media (min-width: 992px) { 
     .listado-modelos {
         display: grid;
