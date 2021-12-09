@@ -172,6 +172,7 @@ desde 768px en adelante */
     text-align: center;
     margin-bottom: calc( var(--separacion) / 2) ;
 }
+/* El ultimo icono tendra margin cero */
 .icono:last-of-type {
     margin:0;
 }
