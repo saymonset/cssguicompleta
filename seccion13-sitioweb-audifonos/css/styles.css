@@ -318,10 +318,16 @@ desde 768px en adelante */
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    /* Aqui selecciono a quien voy a animar, en este caso el transform y background-size */
+    /* Esto esta en la clase .modelo:hover las que se especifco para animar */
     transition-property: transform background-size;
     transition-duration: .3s;
 }
 .modelo:hover {
+    /* transform se usa para la animacion */
+    /* 1.1 es que creazca 10% para la animacion */
+
     transform: scale(1.1);
     background-size: 30rem;
 }
