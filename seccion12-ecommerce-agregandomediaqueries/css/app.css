@@ -21,6 +21,9 @@ h3 {
 h1 {
     font-size: 3.8rem;
 }
+
+/* De 768px que es lo minimo en adelante , colocale 5rem en pantallas grandes */
+/* Los media query, su parametro no acepta todavia rem */
 @media (min-width: 768px) { 
     h1 {
         font-size: 5rem;
@@ -108,7 +111,7 @@ img {
     flex-direction: column;
     align-items: center;
 }
-
+ /* Medida de las tablets 768px */
 @media (min-width: 768px) { 
     .nav-principal {
         justify-content: space-between;
@@ -124,6 +127,8 @@ img {
     height: 25rem;
 }
 
+/* De cero a  768px  mide height = 25rem.
+de 768px en adelante , height medira 55rem */
 @media (min-width: 768px) { 
     .hero {
         height: 55rem;
@@ -132,6 +137,7 @@ img {
 
 /** Categorias **/
 .categorias {
+    /* 5rem arriba y abajo, 0 izquierda y derecha */
     padding: 5rem 0;
 }
 .categoria {
@@ -170,14 +176,21 @@ img {
     background-image: linear-gradient( to bottom, transparent 50%, #037bc0 50%, #037bc0 100% ), url(../img/nosotros.jpg);
     background-position: center, top left;
     background-repeat: no-repeat;
+    /* 70rem lo que hace es estirar la segunda imagen de
+    linear-gradient que es la url, y su imagen hasta 70rem o 700px y se ve mejor la imagen */
     background-size: 100%, 70rem;
 }
 
 @media (min-width: 768px) { 
     .sobre-nosotros {
+        /* linear-gradient( va  a colocar dos imagenes, la primera es transparente hasta el 50% y
+        luego coloca color de 50% al 100% */
+        /* La url es la segunda imagen */
         background-image: linear-gradient( to right, transparent 50%, #037bc0 50%, #037bc0 100% ), url(../img/nosotros.jpg);
         background-position: left center ;
         padding: 10rem 0;
+        /* 160rem es el ancho que va a tomar la segunda imagen de  linear-gradient
+        que es la url(../img/nosotros.jpg) */
         background-size: 100%, 160rem;
     }
 }
@@ -188,6 +201,8 @@ img {
 @media (min-width: 768px) { 
     .sobre-nosotros-grid {
         grid-template-columns: repeat(2, 1fr);
+       /* Con unset, eliminamos  grid-template-rows: repeat(2, 1fr); que lo hereda de movilfirst
+       porque con mediaquery estamos con pantallas de 768px en adelante         */
         grid-template-rows: unset;
         column-gap: 10rem;
     }
@@ -253,16 +268,18 @@ img {
 }
 
 
-
+/* Colocamos margin-bottom a los productos en los movildesktop*/
 .producto {
     background-color: #037bc0;
     margin-bottom: 2rem;
 }
 @media (min-width: 768px) { 
     .producto {
+        /* eliminamos el margin-bottom en los desktop */
         margin-bottom: 0;
     }
 }
+/* Tenemos muchos productos, pero al ultimo producto, le eliminamos el margin-bottom */
 .producto:last-of-type {
     margin-bottom: 0;
 }
@@ -304,11 +321,13 @@ img {
     }
 }
 
+/* Aqui seleccionamos el primer div despues de la clase .grid-footer */
 .grid-footer > div {
     margin-bottom: 2rem;
 }
 @media (min-width: 768px) { 
     .grid-footer > div {
+        /* Sale una linea anaranjada por el margin, entonces lo eliminamos */
         margin: 0;
     }
 }
@@ -333,6 +352,9 @@ img {
 .contenido-nosotros {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    /* auto-fit crea la cantidad de columnas automaticamente. Minimo es 25rem ,
+    si es menor a 25rem las columnas , entonces dale 1fr por cada una en autocrecimiento */
+    /* Esto es crear un sitio responsive sin media query */
     grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr ) );
     column-gap: 4rem;
 }
@@ -341,6 +363,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* con padding , centramos el contendo y no se va tanto a las orillas */
     padding: 5rem;
 }
 @media (min-width: 768px) { 
