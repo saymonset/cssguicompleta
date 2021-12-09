@@ -220,6 +220,7 @@ desde 768px en adelante */
         background-repeat: repeat, no-repeat;
     }
     .notavif.notwebp .sobre-tech {
+        /* La direccion ahora va a ser de izquierda a derecha */
         background-image: linear-gradient( to left, transparent 50%, var(--primario) 0% ), url(../img/imagen-mujer.jpg);
     }
     .webp .sobre-tech {
@@ -242,6 +243,7 @@ desde 768px en adelante */
 
 @media (min-width: 768px) { 
     .sobre-tech-grid {
+        /* eliminamos los rows y gaps que heredamos de movlfirst */
         grid-template-rows: unset;
         row-gap: unset;
         grid-template-columns: repeat(2, 1fr);
@@ -284,6 +286,7 @@ desde 768px en adelante */
 
 .listado-modelos {
     display: flex;
+    /* Con esto, coloco el z de primero que es el valor alto de los audifonos */
     flex-direction: column-reverse;
 }
 
@@ -301,10 +304,15 @@ desde 768px en adelante */
     margin-bottom: 2rem;
     padding-left: 4rem;
     color: var(--primario);
+    /* esquinas redondeadas */
     border-radius: 2rem;
     min-height: 20rem;
     background-repeat: no-repeat;
+    /* Las imagenes por defecto se alinean a la izquierda.
+    Con background-position: la alineamos de izquierda a derech el 
+    90% y de arriba y abajo va a  ser centrado */
     background-position: 90% center;
+    /* tamano de la imagen y caja */
     background-size: 15rem;
     display: flex;
     flex-direction: column;
@@ -335,6 +343,11 @@ desde 768px en adelante */
 }
 
 .modelo:first-of-type {
+    /* Aqui le quitamos al primer audifono el margin , pero
+    en html es el ultimo, pero como colocamos flex y la columna es reverse,
+    entonces el ultimo esta de primero */
+    /* y el prmero esta de ultmo, entonces se le quita el
+    margin-bottom al ultimo que es el primero en html */
     margin-bottom: 0;
 }
 
