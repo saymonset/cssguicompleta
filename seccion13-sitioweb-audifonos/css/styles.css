@@ -1,6 +1,7 @@
 /* Asi es como se crea un custom properies :root */
 :root {
     /* Las variables empiezan con -- */
+    /* Aqui creamos nuestra paleta de colores personalizadas */
     --primario: #1073BA;
     --secundario: #00DA55;
     --gris: #3B3B3B;
@@ -13,19 +14,23 @@
     --fuentePrincipal: 'Roboto', sans-serif;
     --fuenteSecundaria: 'Lato', sans-serif;
 }
-
+/* Este snippet mejora el width , padding y border y lo generaliza para que sea homogeneo.
+Si no se coloca, esos elementos crecen sin control */
+/* Aqui sale que 1rem es 10px */
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
+/* Aqui creamos los globales que se usan en los proyectos */
 body {
     /* Asi se usan las custom properties. Se empieza con var y su nombre variable:  var(--fuentePrincipal) */
     font-family: var(--fuentePrincipal);
     font-size: 1.6rem;
+    /* El interlineado puede o no llevar unidad, en este caso no lo lleva */
     line-height: 1.5;
 }
 
