@@ -253,7 +253,9 @@ img {
     /* left tiene prioridad con right */
 
     position: relative;
+    /* la cantidad de margin que tengas debe ser la misma que debe tener los hijos como top: -10rem; y bottom: -10rem; */
     margin: 10rem 0;
+    /* Elimina el scroll sobrante de los lados */
     overflow: hidden;
 }
 .seguridad::before,
@@ -273,13 +275,20 @@ img {
     position: absolute;
 }
 .seguridad::before {
+    /* Creando las lineas diagonales */
+    /* Con esta -10 rem del top, rellenamos de blanco hacia arriba y quitamos algo morado que afecta */
     top: -10rem;
     left: 0;
+    /* Aqui se crea la diagonal con rotate de 3 grados */
     transform: rotate(3deg);
 }
 .seguridad::after {
+    /* su posicion es abajo */
+    /* Con esta -10 rem del bottom, rellenamos de blanco hacia abajo y quitamos algo morado que afecta */
     bottom: -10rem;
     left: 0;
+    /* Aqui se crea la diagonal con rotate de 3 grados */
+    /* Diagonal invertida al otro lado con -3 */
     transform: rotate(-3deg);
 }
 .seguridad__heading {
