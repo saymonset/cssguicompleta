@@ -25,6 +25,8 @@ body {
 h1, h2, h3 {
      /* fuentes negritas */
     font-weight: 900;
+    /* Sobre Nosotros.  Con line-height no se separa las lineas de una palabra con la otra */
+    
     line-height: 1.2;
     margin: 1rem 0 4rem 0;
 }
@@ -229,6 +231,8 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
     grid-template-rows: repeat(2, 1fr);
     background-image: url(../img/nosotros.jpg);
     background-repeat: no-repeat;
+    /* Quero posicionar la imagen en la parte inferior */
+    /* Esto es para que se vea la imagen abajo, centrado y el texto en la parte superior en blano su fondo*/
     background-position: bottom center;
 }
 @media (min-width: 992px) { 
@@ -238,10 +242,13 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
 }
 
 .contenido-nosotros {
+    /* Esto es para que se vea la imagen y el texto en la parte superior en blano su fondo*/
     background-color: var(--blanco);
+    /* Un paddin se exande 50px en dispositivos pequenos */
     padding: 5rem;
 }
 @media (min-width: 992px) { 
+    /* Aqu colocamos el texto por encima de la imagen */
     .contenido-nosotros {
         grid-column: 2 / 4;
     }
