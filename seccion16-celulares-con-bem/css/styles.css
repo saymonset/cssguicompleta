@@ -1,3 +1,4 @@
+/* Inicio de globales */
 :root {
     --primario: #6834a6;
     --blanco: #FFF;
@@ -36,6 +37,9 @@ img {
     max-width: 100%;
     display: block;
 }
+/* El signo de $ nos dice ue debe terminar o finalizar en __contenedor */
+/* Va a buscar header__contenedor y nucleus__contenedor y aplica estas reglas css */
+/* Eliminamos header__contenedor y nucleus__contenedor y usamos esta class */
 [class$="__contenedor"] {
     max-width: 120rem;
     margin: 0 auto;
@@ -45,10 +49,12 @@ img {
     text-align: center;
     margin-bottom: 5rem;
 }
+ /* Fin de globales */
 
 .header {
     background-image: url(../img/header_bg.svg);
     background-repeat: no-repeat;
+    /* La imagen esta arriba y a la derecha */
     background-position: top right;
     background-size: 10rem;
     padding: 5rem 0;
@@ -98,6 +104,7 @@ img {
     .header__heading {
         text-align: left;
         font-size: 5rem;
+        /* Aqui estamos juntando las lineas entre ellos */
         line-height: 1.2;
     }
 }
@@ -110,15 +117,21 @@ img {
 }
 .header__boton {
     background-color: var(--primario);
+    /* Con block, tomara todo el espacio disponible  */
     display: block;
+    /* para hacer un poco mas grande el boton */
     padding: 1rem;
     text-align: center;
     color: var(--blanco);
+    /* para separar el boton y la imagen */
     margin-bottom: 4rem;
 }
 @media (min-width: 768px) { 
     .header__boton {
+        /* 1 rem arriba y abajo, 3rem derecha y izquierda */
         padding: 1rem 3rem;
+        /* No aqueremos qaue tome todo el espacio disponible */
+        /* Va tomar solo el espacio que requiere */
         display: inline-block;
     }
 }
@@ -130,6 +143,7 @@ img {
 @media (min-width: 768px) { 
     .navegacion {
         flex-direction: row;
+        /* Con flex start, alineamos hacia arriba */
         align-items: flex-start;
         gap: 2rem;
     }
