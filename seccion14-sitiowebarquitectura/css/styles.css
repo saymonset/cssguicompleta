@@ -1,11 +1,13 @@
+/* Agregamos unos customer properties p variables */
 :root {
     --blanco: #FFF;
     --negro: #111111;
     --gris: #343A40;
-
+/* fuente de google */
     --fuentePrincipal: 'Raleway', sans-serif;
 }
 
+/* Para que los rem sean 10px */
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -17,9 +19,11 @@ html {
 body {
     font-family: var(--fuentePrincipal);
     font-size: 1.6rem;
+    /* un interlineado */
     line-height: 1.8;
 }
 h1, h2, h3 {
+     /* fuentes negritas */
     font-weight: 900;
     line-height: 1.2;
     margin: 1rem 0 4rem 0;
@@ -37,20 +41,29 @@ h3 {
 a {
     text-decoration: none;
 }
+/* Para hacer las imagenes responsive */
 img {
     max-width: 100%;
+    /* Esto es para que no tenga esa linea de la parte inferior */
     display: block;
 }
+
+/* Este es nuestro contenedor y se coloca un maximo de width de 1200px, que es el estandar */
 .contenedor {
     max-width: 120rem;
+    /* Para que este centrado */
     margin: 0 auto;
+    /* En caso que sea menor a 1200px o 120rem, que agarre el 90% de ancho */
     width: 90%;
 }
+/* un boton global */
 .btn {
+    /* texto del boton es gris */
     color: var(--gris);
     background-color: var(--blanco);
     border: 1px solid var(--gris);
     padding: .5rem 2rem;
+    /* Aqui colocamos una animacion */
     transition: background-color .3s;
 }
 .btn:hover {
@@ -68,17 +81,24 @@ img {
 
 /** Header */
 .header {
+    /* Esta es la altura minima de alto.. Es decir..Por defalt es 60rem */
     min-height: 60rem;
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
+    /* Con cover, tomaremos todo el espacio disponible con la imagen y asi no queda recortada */
     background-size: cover;
+    /* Va a mosrar el centro de la imagen y no el comienzo que es un techo al empezara  aver la imagen*/
     background-position:  center;
+    /* Tener un poco de esacio en laparte superior */
     padding: 5rem 0;
 }
 .contenido-header {
     display: flex;
     flex-direction: column;
+    /* tenemos en header una altura minima de 60rem, entoncesyo hago un calculo de 60rem - 4rem
+    para tener un alto default paravcontenido-header */
     height: calc(60rem - 4rem);
+    /* Con esto, el texto del slogan esta en la parte inferior */
     justify-content: space-between;
     color: var(--blanco);
 }
@@ -87,6 +107,7 @@ img {
     text-align: center;
     font-size: 3rem;
 }
+/* para pantallas mayores o iguales a 768px */
 @media (min-width: 768px) { 
     .nombre-sitio {
         font-size: 5rem;
@@ -116,16 +137,26 @@ img {
     }
 }
 .telefono {
+    /* con fles, automaticamente se coloca de izquier a derecha y ahora el icono del tlf 
+    mas el nmeroe sta de izq a der */
     display: flex;
 }
+
+/* Este before, va  a crear un elemento en el html y lo coloca antes del elemento telefono y
+no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
 .telefono::before {
+    /* Cuando tienes un content vacio, por lo general vas a anadirlo via
+    backgroudn ya sea  una imagen etc */
     content: '';
+    /* como width y hight no afecta a un diplay:line que trae pordefecto los <a, se le coloca un 
+    display block y ahora si va a tomar el width y el height */
     display: block;
     width: 4rem;
     height: 4rem;
     background-image: url(../img/telefono.png);
     background-repeat: no-repeat;
     background-position: center center;
+    /* hace la separacion delicono con el numero de tlf */
     margin-right: 1rem;
 }
 
@@ -139,6 +170,7 @@ img {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    /* un poquito de separacion hacia arriba */
     margin-top: 1rem;
 }
 @media (min-width: 768px) { 
@@ -147,17 +179,24 @@ img {
     }
 }
 .navegacion a {
+    /* paddng mas pequeno */
     padding: .5rem;
+    /* Le colocamos animacion a background-color*/
     transition: background-color 300ms;
+    /* toma todo el ancho disponible */
     width: 100%;
     text-align: center;
 }
 @media (min-width: 768px) { 
     .navegacion a {
+        /* paddng mas grande */
+        /* para que se ve mas grande el boton */
         padding: 1rem 2rem;
     }
 }
 .navegacion a:hover {
+    /* Esto es al pasar el mouse sobre el enlace */
+    /* red green blue, con transparencia de .5 */
     background-color: rgb( 255 255 255 / .5 );
     color: var(--negro);
 }
