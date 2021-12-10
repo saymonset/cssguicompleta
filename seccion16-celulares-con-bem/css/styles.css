@@ -229,6 +229,7 @@ img {
 }
 @media (min-width: 768px) { 
     .listado__numero {
+        /* toma como base 200px */
         flex-basis: 20rem;
         text-align: right;
         font-size: 4rem;
