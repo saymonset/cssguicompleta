@@ -122,13 +122,15 @@ img {
     margin: 0;
 }
 
-/* bloque__elemento--modificador */
+/* bloque__elemento--modificador. Se diferencia con dos guiones */
 .producto__precio--oferta {
     color: red;
+    /* Con line-throught , le pasamos una linea en el medio de un texto */
     text-decoration: line-through;
 }
 
 .producto__boton {
+    /* Con este all:unset eliminamos la apariencia de un boton que trae por defecto */
     all: unset;
     background-color: var(--azul);
     width: 100%;
@@ -137,6 +139,8 @@ img {
     color: var(--blanco);
     cursor: pointer;
 }
+/* No vas a crear un nuevo elemento para colocar hover al boton */
+/* usas el nombre de BEM y le agregas hover con dos puntos */
 .producto__boton:hover {
     background-color: #014570;
 }
