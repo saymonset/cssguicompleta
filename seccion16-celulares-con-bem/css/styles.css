@@ -183,13 +183,28 @@ img {
 }
 .listado__elemento {
     background-color: var(--blanco);
+    /* Con esto creamos la sombra del elemento */
+    /* El primer valor es horizontal, eneste caso es 0px */
+    /* El segundo es vertical (arriba, hacia abajo) , en este caso es 0px */
+    /* El tercer valor es que tan borrosa va hacer la imagen , poca en este caso 15px y cuanto 
+    se extiende la sombra*/
+    /* El cuarto valor es el grosor de la sombra o la dureza de la sombra */
+    /* El quinto es el color que se va a aplicar */
+
     box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    /* padding arriba y abajo */
     padding: 2rem;
+    /* para separar los elementos */
     margin-bottom: 5rem;
+    /* siempre que quieras animar, debes usar transition-property: ; */
     transition-property: transform;
     transition-duration: 300ms;
 }
 .listado__elemento:hover {
+    /* scale si es  1.1 es que crezca al 10% */
+    /* scale si es  1.2 es que crezca al 20% .. etc*/
+    /* Si quieres que sea mas grande, vete arriba del 1 scale(1.1) */
+    /* Si quieres que sea mas pequeno, vete abajo del 1 scale(0.1) */
     transform: scale(1.1);
 }
 @media (min-width: 768px) { 
