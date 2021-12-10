@@ -242,6 +242,16 @@ img {
 .seguridad {
     background-color: var(--primario);
     padding: 20rem 0;
+    /* El boque de seguridad es nuestra referencia para posicionar otros
+    y debe tener la position relative */
+    /* position relative que es la referencia y es el padre */
+    /* hay que ubicar uno de los hijos  como absolute */
+
+    /* Siempre un elemnto tiene que tener position relative */
+    /* y con el elemento hijo, colocas position absolute y vas a moverlo con left, right, top, bottom */
+    /* top sobre bottom tiene prioridad */
+    /* left tiene prioridad con right */
+
     position: relative;
     margin: 10rem 0;
     overflow: hidden;
@@ -249,9 +259,17 @@ img {
 .seguridad::before,
 .seguridad::after {
     background-color: var(--blanco);
+    /* siempre que uses before y after, necesitas un content */
+    /* lo colocamos vacio porque va un relleno */
     content: '';
     height: 20rem;
     width: 120%;
+    /* El boque de seguridad es nuestra referencia para posicionar otros
+    y debe tener la position relative */
+    /* position relative que es la referencia y es el padre */
+    /* hay que ubicar uno de los hijos  como absolute */
+    /* con este , lo posixiono arriba con referencia a segurida por la position: relative */
+    /* el papa de este hijo es seguridad, si no tiene padre, entonces va a tomar como referencia el body */
     position: absolute;
 }
 .seguridad::before {
