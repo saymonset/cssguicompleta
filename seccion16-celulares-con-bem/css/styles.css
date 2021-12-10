@@ -166,6 +166,8 @@ img {
 }
 
 .nucleus__grid {
+    /* Cuando sea movil, se coloca primero el texto y luego la imagen colocando 
+    column-reverse */
     display: flex;
     flex-direction: column-reverse;
 }
@@ -173,6 +175,7 @@ img {
 @media (min-width: 768px) { 
     .nucleus__grid {
         display: grid;
+        /* La primera columna del celular es mas pequena que la otra columna de al lado */
         grid-template-columns: 1fr 2fr;
         column-gap: 5rem;
         align-items: center;
