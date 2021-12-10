@@ -342,7 +342,11 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
     }
 }
 .galeria img {
+    /* object-fit: Hace que un objeto se ajuste o quepa dentro de otro.
+     y aqui asegramos que el elemento img se ajuste con los demas elementos
+    */
     object-fit: cover;
+    /* Para que tome el 100% la imagen en altura.. Si la imagen es pequena , se ajusta */
     height: 100%;
 }
 .galeria .imagen:nth-child(2) {
