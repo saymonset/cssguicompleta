@@ -263,7 +263,9 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
 
 .modelo {
     display: grid;
+    /* La fila de arriba para el texto y el de abajo para la imagen */
     grid-template-rows: repeat(2, 1fr);
+    /* Para todas lasimagenes de basico premier y elite tendran (Abajo. Dentro de la propia imagen, se muestra abajo) y centrada la imagen */
     background-repeat: no-repeat;
     background-position: bottom center;
     margin-bottom: 5rem;
@@ -274,12 +276,15 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
 
 @media (min-width: 768px) { 
     .modelo {
+        /* heredo las propieddaes de movilfirst y le agrego 2 columnas a las dos filas */
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .contenido-modelo {
+    /* El padding hace que el texto no esten tan pegado hacia las esquinas */
     padding: 5rem;
+    /* Para que sea mas facil de leer el texto */
     background-color: var(--blanco);
 }
 
@@ -288,10 +293,14 @@ no se puede seleccionar, ideales cuando quieres colocar un icono como un tlf */
 }
 @media (min-width: 768px) { 
     .basico {
+        /* La imagen debe quitarse los espacios y debe estar arriba a la derecha 
+        y lo logramos con position */
         background-position: top right;
     }
     .basico .contenido-modelo {
+        /* Se posiciona el texto en la parte inferior */
         grid-row: 2 / 3;
+        /* Alineamos el texto de arriba con e de abajo */
         padding: 2rem 2rem 2rem 0;
     }
 }
