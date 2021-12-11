@@ -60,6 +60,8 @@ function versionAvif() {
 }
 
 function dev() {
+    // Cualquier cambio que hagas, el watch lo vuelve a compilar
+    //Atentos a estos arhcivos *.css, en caso que ocurra un cambio, llama a la funcion css
     watch( 'src/scss/**/*.scss', css );
     watch( 'src/img/**/*', imagenes );
 }
@@ -72,6 +74,8 @@ function tarea(done) {
 
 exports.simonTarea = tarea;
 exports.css = css;
+// Aqui extportamos dev que tiene watch
+//Lo mantenemos ejecutandolo con gulp dev
 exports.dev = dev;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
