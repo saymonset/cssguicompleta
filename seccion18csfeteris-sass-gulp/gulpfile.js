@@ -26,7 +26,8 @@ function css( done ) {
         // Compilamos el app.scss
         .pipe( sourcemaps.init() )
         //llamo al la funcion de sass() que la importe con require('gulp-sass')(require('sass'))
-        .pipe( sass() )
+        // Con esto minficamos el css que es originado por sass
+        .pipe( sass({outputStyle:'compressed'}) )
 
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
         .pipe( sourcemaps.write('.'))
