@@ -156,7 +156,7 @@ img {
         color: var(--blanco);
     }
 }
-
+/* Usamos o creamos un modificador con BEM en el footer */
 .navegacion__link--blanco {
     color: var(--blanco);
 }
@@ -389,10 +389,14 @@ img {
     }
 }
 .footer__logo {
+    /* Ajustamos a que la imagen sea mas pequena con 20rem */
     width: 20rem;
+    /* con esto , centramos la imagen */
+    /* va a estar centrado pero va a tener un cierto distanciamiento con la navegacion que esta abajo 4rem */
     margin: 0 auto 4rem auto;
 }
 @media (min-width: 768px) { 
+    /* En pantallas iguales o mayores a 768px se quita esto ...distanciamiento con la navegacion que esta abajo 4rem */
     .footer__logo {
         margin: 0;
     }
