@@ -1,6 +1,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
 // CSS y SASS
+// Estoy importando gulp-sass y sass y queda en la constante sass
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -12,12 +13,24 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
 
+// con gulp css ejecuta toda esta funcion
 function css( done ) {
+    // Para compilar scss
+    // sass tienen todo lo de sass y gulp-sass permite conectarlo con gulp para compilarlo y sacar el css
+    // npm i --save-dev sass gulp-sass
+    // src es una funcion de gulp que nos permite identificar un archivo
+    // Le indicamos donde esta la hoja de estilo de scss
+    // Compilar sass
+    // Pasos: 1 - Identificar archivo, 2 - Compilarla, 3 - Guardar el .css
     src('src/scss/app.scss')
+        // Compilamos el app.scss
         .pipe( sourcemaps.init() )
+        //llamo al la funcion de sass() que la importe con require('gulp-sass')(require('sass'))
         .pipe( sass() )
+
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
         .pipe( sourcemaps.write('.'))
+        // aqui almacenamos la hoja de estilo cmpilada
         .pipe( dest('build/css') )
 
     done();
