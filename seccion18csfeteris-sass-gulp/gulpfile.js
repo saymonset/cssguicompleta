@@ -50,8 +50,14 @@ function dev() {
     watch( 'src/scss/**/*.scss', css );
     watch( 'src/img/**/*', imagenes );
 }
+function tarea(done) {
+    console.log('Primera tarea saymon');
+    //Estamos diciendole a gulp que ya la funcion a finalizado con done
+    // Cuano llegue  a la linea de done, ya gulp sabe que termino la tarea
+    done();
+}
 
-
+exports.simonTarea = tarea;
 exports.css = css;
 exports.dev = dev;
 exports.imagenes = imagenes;
