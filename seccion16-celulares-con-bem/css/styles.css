@@ -340,26 +340,34 @@ img {
 }
 @media (min-width: 768px) { 
     .testimoniales__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 .testimonial {
+    /* Aqui clocamos la sombra */
     box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
     background-color: var(--blanco);
+    /* Eston es para todas las direccinex el padding:  arriba, abajo , izquierda, derecha */
     padding: 2rem;
+    /* La referenca que es el padre aqui y con esto colocar los hijos en position absolute */
     position: relative;
 }
 .testimonial__texto {
     padding-left: 4rem;
 }
 .testimonial__texto::before {
+    /* hay que colocar el content asi sea vacio, de lo contrario, no va a mostrar nada */
     content: '';
     background-image: url(../img/comilla.png);
+    /* Ajustamos el tamano de la imagen a fuerza antes de posicionarla correctamente con position absolute, el top y left */
     background-size: 3rem;
     background-repeat: no-repeat;
+    /* la imagen la colocamos dentro de ella misma en el centro */
     background-position: center;
+    /* Si no se le coloca el width y el hight, no mostrar nada */
     width: 3rem;
     height: 3rem;
+    /* La referenca o el padre de la position:absolute es .testimonial */
     position: absolute;
     top: 3.5rem;
     left: 2rem;
