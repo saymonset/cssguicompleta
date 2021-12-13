@@ -1,3 +1,6 @@
+// El guion bajo _ del nombre de cada archivo es porqe va a ser incluido en otro como app.scss
+// Antes se hacia con @import , ahora se hace con use 
+
 @use 'base';
 @use 'header';
 @use 'footer';
