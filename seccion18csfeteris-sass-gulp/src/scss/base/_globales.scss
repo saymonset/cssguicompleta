@@ -1,6 +1,8 @@
+// Usar las variables en otro file
 @use 'variables' as v;
 
 html {
+    // Esto convierte un rem en 10px
     font-size: 62.5%;
     box-sizing: border-box;
 }
