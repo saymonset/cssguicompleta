@@ -69,6 +69,8 @@ function versionAvif() {
 function dev() {
     // Cualquier cambio que hagas, el watch lo vuelve a compilar
     //Atentos a estos arhcivos *.css, en caso que ocurra un cambio, llama a la funcion css
+    //Con estos comodines **, buscate todos lo archivos con extension scss dentro de cualquier 
+    //carpeta scss
     watch( 'src/scss/**/*.scss', css );
     watch( 'src/img/**/*', imagenes );
 }
