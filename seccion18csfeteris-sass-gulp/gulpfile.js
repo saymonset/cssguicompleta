@@ -3,8 +3,11 @@ const { src, dest, watch, series, parallel } = require('gulp');
 // CSS y SASS
 // Estoy importando gulp-sass y sass y queda en la constante sass
 const sass = require('gulp-sass')(require('sass'));
+// Con postcss, autoprefixer   estas dos dependencias, podemos escribir codigo de ultima generacion de css y va a crear versiones comatibles con naveadores que no la soportan
+//npm -i --save-dev autoprefixer gulp-postcss
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 
@@ -12,6 +15,7 @@ const cssnano = require('cssnano');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
+const gulpWebp = require('gulp-webp');
 
 // con gulp css ejecuta toda esta funcion
 function css( done ) {
@@ -22,13 +26,15 @@ function css( done ) {
     // Le indicamos donde esta la hoja de estilo de scss
     // Compilar sass
     // Pasos: 1 - Identificar archivo, 2 - Compilarla, 3 - Guardar el .css
+    // src que identifica un archivo y es de gulo
     src('src/scss/app.scss')
         // Compilamos el app.scss
         .pipe( sourcemaps.init() )
         //llamo al la funcion de sass() que la importe con require('gulp-sass')(require('sass'))
         // Con esto minficamos el css que es originado por sass
         .pipe( sass({outputStyle:'compressed'}) )
-
+       // Crea codigo que va  a hacer soportado por otros navegqdores  que tal ves no soporte
+       //las nuevas caracteristicas
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
         .pipe( sourcemaps.write('.'))
         // aqui almacenamos la hoja de estilo cmpilada
@@ -81,7 +87,9 @@ exports.dev = dev;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
-
+// Ejecuta las tareas con solo tipear gulpWebp. Se ejecuta cada tarea seacuencialmente
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
+//Siempre dejas las que tenga los watxh hasta el final
+exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
+
