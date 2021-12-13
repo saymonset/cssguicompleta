@@ -1,6 +1,8 @@
 // El guion bajo _ del nombre de cada archivo es porqe va a ser incluido en otro como app.scss
 // Antes se hacia con @import , ahora se hace con use 
 
+// Como _index esta en la carpeta base, va a leer el archivo _index.scss y va a cargar todos los 
+// archvos que estan nombrados con forward
 @use 'base';
 @use 'header';
 @use 'footer';

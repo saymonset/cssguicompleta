@@ -1,3 +1,7 @@
+// @forward nos va a permitir incluir archivos dentro de otros, pero solo
+// los va a incluir
+// @use y @import, n solo los incluye si no queusa el contenido para compilarlos
+
 @forward 'normalize';
 @forward 'variables';
 @forward 'mixins';
