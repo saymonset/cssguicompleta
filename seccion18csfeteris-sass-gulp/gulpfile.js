@@ -12,6 +12,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 
 // Imagenes
+// Hacer imagenes mas ligeras
+// Instalamos el minificado de imagen con gulp
+// npm i --save-dev gulp-imagemin
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
@@ -47,6 +50,8 @@ function imagenes() {
     // Todos los archivos que esten en la carpeta src/img
     // Con colocar return, ya no es necesario colocar done
     return src('src/img/**/*')
+    //Ejecutamos gulp imagenes
+    // Aqui con la libreria de minificar imagenes, minifico cada imagen encontrada con  imagemin({ optimizationLevel: 3 })
         .pipe( imagemin({ optimizationLevel: 3 }) )
         // Muevelos a esta carpeta
         .pipe( dest('build/img') )
