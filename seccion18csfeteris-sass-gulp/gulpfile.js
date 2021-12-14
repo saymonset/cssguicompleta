@@ -16,9 +16,13 @@ const cssnano = require('cssnano');
 // Instalamos el minificado de imagen con gulp
 // npm i --save-dev gulp-imagemin
 const imagemin = require('gulp-imagemin');
+// Imagenes convertirlas a extension webp que son mas ligeras
 const webp = require('gulp-webp');
+// Imagenes convertirlas a extension avif que son mas ligeras
 const avif = require('gulp-avif');
+// Cuando el paquete diga gulp- , es completamente compatible con google
 const gulpWebp = require('gulp-webp');
+const { Declaration } = require('postcss');
 
 // con gulp css ejecuta toda esta funcion
 function css( done ) {
@@ -57,18 +61,25 @@ function imagenes() {
         .pipe( dest('build/img') )
 }
 
+// Convertir una imagen a extensiom webp que es mas ligera
 function versionWebp() {
+    // con estas opciones, se crea mas ligero la imagen
     const opciones = {
         quality: 50
     }
+    // Recorremos y agarramos las extensiones que queremos que sean webp para que sean mas ligeras
+    // Filtramos todas las imagenesque encuentres y me la filtras por png y jpg
     return src('src/img/**/*.{png,jpg}')
+    // Ahora aplicamos la funcion webp para transformarla y hacerla mas ligera
         .pipe( webp( opciones ) )
+        //la enviamos al dest
         .pipe( dest('build/img') )
 }
 function versionAvif() {
     const opciones = {
         quality: 50
     }
+    // procesamos las imagenes que queremos convertirlas en avif
     return src('src/img/**/*.{png,jpg}')
         .pipe( avif( opciones ) )
         .pipe( dest('build/img'))
@@ -98,12 +109,14 @@ exports.css = css;
 exports.dev = dev;
 // Aqui tambien puedo cargar las imagenes
 exports.imagenes = imagenes;
+// La Declaratiomos aqui para ejecutarla manualmnte
 exports.versionWebp = versionWebp;
+// La Declaratiomos aqui para ejecutarla manualmnte
 exports.versionAvif = versionAvif;
 // Ejecuta las tareas con solo tipear gulpWebp. Se ejecuta cada tarea seacuencialmente
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
 //Siempre dejas las que tenga los watxh hasta el final
-// Aca llamos las imagenes cargadas
+// Aca llamamos las imagenes cargadas webp
 exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
 
