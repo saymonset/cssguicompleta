@@ -1,6 +1,7 @@
 // Ve directamente a base/variables
 @use 'base/variables' as v;
 // Ve directamente a base/mixins
+//Aqu importamos un mixin
 @use 'base/mixins' as m;
 
 .header {
@@ -9,6 +10,7 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    //Con este @include es para utilizar un mixin
     @include m.tablet { 
         min-height: 70rem;
     }

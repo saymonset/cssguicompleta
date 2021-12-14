@@ -1,5 +1,7 @@
 @use 'variables' as v;
 
+// Para crear un mixin, se coloca @mixin y nombre de la variable
+//Son reutlizables para codigo
 @mixin telefono {
     @media (min-width: v.$telefono) {
         @content;
