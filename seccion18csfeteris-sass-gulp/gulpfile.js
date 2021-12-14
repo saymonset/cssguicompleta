@@ -42,10 +42,13 @@ function css( done ) {
 
     done();
 }
-
+// Fuentes de las imagenes
 function imagenes() {
+    // Todos los archivos que esten en la carpeta src/img
+    // Con colocar return, ya no es necesario colocar done
     return src('src/img/**/*')
         .pipe( imagemin({ optimizationLevel: 3 }) )
+        // Muevelos a esta carpeta
         .pipe( dest('build/img') )
 }
 
@@ -72,6 +75,8 @@ function dev() {
     //Con estos comodines **, buscate todos lo archivos con extension scss dentro de cualquier 
     //carpeta scss
     watch( 'src/scss/**/*.scss', css );
+    // En caso que halla una nueva imagenes, llamo nuevamente a la tarea de imagenes pra cargarla
+    // con watch automaticamente
     watch( 'src/img/**/*', imagenes );
 }
 function tarea(done) {
@@ -86,6 +91,7 @@ exports.css = css;
 // Aqui extportamos dev que tiene watch
 //Lo mantenemos ejecutandolo con gulp dev
 exports.dev = dev;
+// Aqui tambien puedo cargar las imagenes
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
@@ -93,5 +99,6 @@ exports.versionAvif = versionAvif;
 // series - Se inicia una tarea, y hasta que finaliza, inicia la siguiente
 // parallel - Todas inician al mismo tiempo
 //Siempre dejas las que tenga los watxh hasta el final
+// Aca llamos las imagenes cargadas
 exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
 
