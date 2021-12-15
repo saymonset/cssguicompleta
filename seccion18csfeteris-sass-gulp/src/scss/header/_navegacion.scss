@@ -1,27 +1,38 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
+@use 'sass:math';
 
 .nav-principal {
+    // barra de navegacion de arriba hacia abajo
     display: flex;
     flex-direction: column;
+    // seperacion entre logotipo y los enlaces
     margin-top: 5rem;
     @include m.tablet { 
         flex-direction: row;
+        // los enlaces estan dificiles de leer, colocamos separacion gap
         gap: 1rem;
+        //usamos libreria de sass para dividir entre 4
+        //gap: math.div(v.$separacion,4);
+        // quitamos seperacion entre logotipo y los enlaces generados en movilfirst
         margin-top: 0;
     }
 
     a {
+        // Centramos los textos horizontalment
         text-align: center;
         color: v.$blanco;
         font-size: 2rem;
         text-transform: uppercase;
+        // la fuente que colocamos soporta 700 de ancho
         font-weight: 700;
         margin-bottom: 1rem;
         @include m.tablet { 
+            // quitamos seperacion generados en movilfirst
             margin-bottom: 0;
         }
 
+        // el a:hover, deben estar juntos y se unen con &
         &:hover {
             color: v.$secundario;
         }

@@ -1,20 +1,28 @@
 @use 'base/mixins' as m;
 
 .barra {
+    // si es movil, sera flex columna
     display: flex;
     flex-direction: column;
     @include m.tablet { 
+        //si es tablet en adelante, sera flex fila
         flex-direction: row;
+        // navegacion del lado derecho y logotipo del lado izquierdo
         justify-content: space-between;
+        // con esto va a estar centrada la barra de navegacion
         align-items: center;
     }
 
     .logo {
+        // 50% de la pantalla
         width: 50%;
+        // este centrado horizontalmente
         margin: 0 auto;
 
         @include m.tablet { 
+            // para tablet, 
             width: 20rem;
+            // Aqui quitamos el margin 0 auto y lo colocamos en 0 todo
             margin: 0;
         }
     }
