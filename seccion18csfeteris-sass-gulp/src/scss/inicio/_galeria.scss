@@ -1,31 +1,46 @@
 @use 'base/mixins' as m;
 
 .galeria {
+    // en un dispositiv pequeno, requeririmos dos columnas
     @include m.grid(2, 2rem);
 
     @include m.desktop { 
+        //en un dispositiv mas grande, requeririmos 4 columnas
         @include m.grid(4, 2rem);
     }
 
     .imagen {
 
         img {
+            // voy a forzar que esta imagen crezca este tamano y la voy a cortar con un obejct-fit
             height: 30rem;
             width: 30rem;
+            // Con object-fit podemos darle un ancho a la imagen y se va a ajustar creando
+            // una mascara y posicionando la imagen para que todas midan lo mismo
             object-fit: cover;
         }
 
         @include m.desktop { 
+            // la primera imagen la extendemos dos filas hacia abajo
             &:nth-child(1) {
+                // No se estira la imagen porque le dijimos que tenia que medir height:30rem; width:30rem;
                 grid-row: 1 / 3;
                 img {
+                    // para forzosamente estirarla, le colocamos a esa imagen height 62rem
+                    //Como son dos filas, cada una de 30 rem, nos da 60rem y el gap que es dos rem 
+                    // entonces tenemos 62rem
                     height: 62rem;
+                    // Nos posicionamos laimagen internamente desde el centro con object-position: center;
                     object-position: center;
                 }
             }
             &:nth-child(2) {
+                // la segunda imagen va de la columna dos a la 4
                 grid-column: 2 / 4;
                 img {
+                      // para forzosamente estirarla, le colocamos a esa imagen width 62rem
+                    //Como son dos columnas, cada una de 30 rem, nos da 60rem y el gap que es dos rem 
+                    // entonces tenemos 62rem
                     width: 62rem;
                 }
             }
