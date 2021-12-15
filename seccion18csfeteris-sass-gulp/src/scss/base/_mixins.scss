@@ -3,13 +3,17 @@
 // Para crear un mixin, se coloca @mixin y nombre de la variable
 //Son reutlizables para codigo
 @mixin telefono {
+    // Estos son media query y van enfocados a movifirst
     @media (min-width: v.$telefono) {
+        // Con @content le estamos diciendo que todo lo que esta en esta media query lo inyecte
+        // en estas llaves
         @content;
     }
 }
 
 @mixin tablet {
     @media (min-width: v.$tablet) {
+        //Aqui inyectara todas las reglas que hemos descrito
         @content;
     }
 }

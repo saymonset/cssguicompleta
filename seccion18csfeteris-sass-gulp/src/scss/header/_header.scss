@@ -11,6 +11,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     //Con este @include es para utilizar un mixin
+    // Como el mixin en su declaracion tiene  @content, entonces podemos abrir {} y dentro de ellos colocar 
+    // variables
+    //@content es para saber todo el contenido que le pasemos en mixin, ene ste caso aqui
     @include m.tablet { 
         min-height: 70rem;
     }
