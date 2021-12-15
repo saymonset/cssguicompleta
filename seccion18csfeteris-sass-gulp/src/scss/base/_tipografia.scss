@@ -34,7 +34,9 @@ h2 {
     }
 }
 
+// Sobreescribiendo el elemento h2
 .heading-blanco {
+    // extends hereda todo el css que hay en el selector h2 que esta mas arriba
     @extend h2;
     color: v.$blanco;
 

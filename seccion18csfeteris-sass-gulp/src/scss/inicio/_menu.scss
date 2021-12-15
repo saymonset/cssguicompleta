@@ -2,17 +2,29 @@
 @use 'base/mixins' as m;
 
 .nuestro-menu {
+    // Aqu estamos agregando tres imagens, la tercera es linear-gradient
+    //linear-gradient(to top, v.$primario, v.$primario); es para tener ese color de fondo color cafe
     background-image: url(../img/menu_arriba.svg), url(../img/menu_abajo.svg), linear-gradient(to top, v.$primario, v.$primario);
     background-repeat: no-repeat;
+    // posicionamos la imagen de arriba con center(Centrado horizontalmente) y 5rem
+    // posicionamos la imagen de abajo con center(Centrado horizontalmente) y 92% la altura verticalmente
+    // se coloco en 92 para no tapar los dibujos, aunque pudo haber sido 100%
+    // El espacio libre que hay con la primera imagen y la segunda imagen se cubre
+    // con el 100% de la tercera imagen  (center 5rem, center 92%, 100%;)
     background-position: center 5rem, center 92%, 100%;
+    // para colocar los iconos mas grandes y se vean en dispositivos moviles
     background-size: 200%;
     padding: 15rem 2rem 20rem 2rem;
 
     @include m.tablet {
+        // aqui los iconos lo colocamos mas pequenos 
         padding: 15rem 0 20rem 0;
         background-size: 100%;
     }
     @include m.desktop {
+        // 50% prmera imagen
+        // 50% segunda imagen
+        // 100% el fondo
         background-size: 50%, 50%, 100%;
     }
 
