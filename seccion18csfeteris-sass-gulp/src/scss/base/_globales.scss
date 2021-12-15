@@ -36,7 +36,10 @@ img {
     display: block;
 }
 ul {
+    // eliminamos la vineta que trae por defecto
     list-style: none;
+    // quitaos el padding que trae pro defecto
     padding: 0;
+    // eliminamos el margin que trae por defecto
     margin: 0;
 }
