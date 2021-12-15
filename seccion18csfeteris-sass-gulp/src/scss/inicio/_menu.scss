@@ -42,20 +42,27 @@
     li {
         display: flex;
         justify-content: space-between;
+        // para que e centre verticalmente
         align-items: center;
         p {
             color: v.$blanco;
+            // un poco mas grande
             font-size: 2.2rem;
+            // separacion de lineas
             line-height: 1.5;
+            // quitamos los margenes, pero el de abajo se le coloca dos rem
             margin: 0 0 2rem 0;
 
             span {
+                // forzamos un salto de linea
                 display: block;
                 color: v.$secundario;
             }
         }
         .precio {
+            // mas grande
             font-size: 4rem;
+            // la fuente nos soporta 00 para negritas
             font-weight: 700;
         }
     }
