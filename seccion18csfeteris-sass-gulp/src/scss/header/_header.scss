@@ -10,6 +10,10 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include m.telefono{  
+        
+     }
     //Con este @include es para utilizar un mixin
     // Como el mixin en su declaracion tiene  @content, entonces podemos abrir {} y dentro de ellos colocar 
     // variables
