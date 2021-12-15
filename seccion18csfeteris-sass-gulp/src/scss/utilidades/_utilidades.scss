@@ -3,10 +3,13 @@
 .text-center {
     text-align: center;
 }
+
+// El margen negativo tendra un fondo blanco
 .bg-white {
     background-color: v.$blanco;
 }
 
+// <!-- evitamos que se valla la parte blanca a la seccion de arriba con margin-negativo-10 -->
 .margin-negativo-10 {
     margin-top: -10rem;
 }

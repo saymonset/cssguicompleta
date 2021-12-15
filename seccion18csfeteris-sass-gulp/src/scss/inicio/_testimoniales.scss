@@ -11,14 +11,22 @@
     .testimonial {
         background-color: v.$cafeClaro;
         padding: 2rem 4rem;
+        // maximo de ancho 50% para que se  vea bien en pantallas grandes
+        // en pantallas pequenas va a tomar todo el ancho siempre y cuando no se 
+        // pase de los 500px
         max-width: 50rem;
+        // centramos
         margin: 0 auto;
+        // con esto tenemos las esquinas redondeadas
         border-radius: 1rem;
 
         .autor {
+            // a la derecha
             text-align: right;
+            // font mas grande
             font-size: 2.4rem;
             color: v.$primario;
+            // letra cursiva
             font-family: v.$fuenteCursiva;
         }
     }
