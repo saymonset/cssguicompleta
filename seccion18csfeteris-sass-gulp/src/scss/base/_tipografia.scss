@@ -17,16 +17,19 @@ h2 {
     span {
          color: v.$secundario;
          font-size: 1.8rem;
+        //  con display block hacemos salto de linea y ya no se usa </br>
          display: block;
     }
-
+    // Esto va al final de h2 y es  para mostrar la imagen del cafe
     &::after {
         content: '';
         display: block;
         width: 10rem;
         height: 10rem;
+        // con esto lo centramos
         margin: 0 auto;
         background-image: url(../img/cafe.svg);
+        // Obligando que el tamano de la imagen va a ser de 10rem
         background-size: 10rem;
     }
 }
