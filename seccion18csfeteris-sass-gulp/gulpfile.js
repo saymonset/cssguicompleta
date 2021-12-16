@@ -7,7 +7,8 @@ const sass = require('gulp-sass')(require('sass'));
 //npm -i --save-dev autoprefixer gulp-postcss
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-
+// para ver los origenes al debuguear
+// Nos dice que archivo de sass se encuentra el 
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 
@@ -25,6 +26,7 @@ const gulpWebp = require('gulp-webp');
 const { Declaration } = require('postcss');
 
 // con gulp css ejecuta toda esta funcion
+// esta es la tarea de css donde se compila todo el scss y se genera el css
 function css( done ) {
     // Para compilar scss
     // sass tienen todo lo de sass y gulp-sass permite conectarlo con gulp para compilarlo y sacar el css
@@ -35,14 +37,17 @@ function css( done ) {
     // Pasos: 1 - Identificar archivo, 2 - Compilarla, 3 - Guardar el .css
     // src que identifica un archivo y es de gulo
     src('src/scss/app.scss')
-        // Compilamos el app.scss
+        // Con esto iniciaizamos el sorcemap
         .pipe( sourcemaps.init() )
+        // Compilamos el app.scss
         //llamo al la funcion de sass() que la importe con require('gulp-sass')(require('sass'))
         // Con esto minficamos el css que es originado por sass
         .pipe( sass({outputStyle:'compressed'}) )
        // Crea codigo que va  a hacer soportado por otros navegqdores  que tal ves no soporte
        //las nuevas caracteristicas
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
+        // antes de generar el css , se escribe con sourcemap.write('.') y se guarda con '.' junto al build
+        // te originara la linea original de scss al ver console en el navegaor
         .pipe( sourcemaps.write('.'))
         // aqui almacenamos la hoja de estilo cmpilada
         .pipe( dest('build/css') )
