@@ -45,6 +45,8 @@ function css( done ) {
         .pipe( sass({outputStyle:'compressed'}) )
        // Crea codigo que va  a hacer soportado por otros navegqdores  que tal ves no soporte
        //las nuevas caracteristicas
+    //    aqui pasamos cssnano le grega una gran cantidad de mejora a nuestro codigo css a pate de minificar
+    // En postcss puedes agregar mutiples librerias, por eso es un arreglo
         .pipe( postcss([ autoprefixer(), cssnano() ]) )
         // antes de generar el css , se escribe con sourcemap.write('.') y se guarda con '.' junto al build
         // te originara la linea original de scss al ver console en el navegaor
