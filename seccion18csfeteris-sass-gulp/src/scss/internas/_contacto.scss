@@ -13,30 +13,37 @@
 
 .formulario {
     .campo {
+        // separamos cada campo hacia abajo de 20px
         margin-bottom: 2rem;
 
+        //el ultimo no tendra espqcio hacia abajo
         &:last-of-type {
             margin-bottom: 0;
         }
 
         label {
             text-transform: uppercase;
+            //salto de linea
             display: block;
             font-size: 2.2rem;
             font-weight: 700;
         }
-
+        // si vas a dar stilos a muchos campos menos algunos..
+        // agarra estos estilos para el input y el select, menos el input que tenga submit
         input:not([type="submit"]), 
         select {
             width: 100%;
             padding: 1rem;
             border: .5rem solid v.$primario;
         }
-
+        //solo afectara al submit
         input[type="submit"] {
             background-color: v.$primario;
+            // toma todo el ancho disponible
             width: 100%;
+            // no tiene border los submit
             border: none;
+            // padding para hacerlo mas alto
             padding: 1rem;
             color: v.$blanco;
             font-size: 2.2rem;
