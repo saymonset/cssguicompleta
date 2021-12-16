@@ -4,15 +4,30 @@
 .contenido-menu {
     background-image: url(../img/cafe.jpg);
     background-repeat: no-repeat;
+    // posicionamos la imagen en la parte inferior
     background-position: center bottom;
+    // toma el 100% de lo que mide ese div
     background-size: 100%;
+    //La imagen se corta y la arreglamos con esta nueva propiedad aspect-ratio
+    // antes se conrolaba con padding-bottom: 50rem para que se viera la imagen y controlabamos el padding
+    // para ver cuanto padding ibamos q tener
+    // una propiedad muy nueva que ha agregado a scss
+    //Esta propiedad toma dos valores. Cuanto quieres en pixeles horizontalmente y 
+    // cuanto quieres verticalente
+    // Por cada pixel horizontal, quiero dos vertical: aspect-ratio: 1 / 2;
+    //Si horizontalmente mi contenido mide 600 px, verticalmente medira 1200px
+//    por cada 3 px horizontales, dame 6 px verticales y saca la imagen hacia afuera
+//Si pones  aspect-ratio: 2 / 3; Ancho mil, altura mil 500 (Suponiendo que es 500px el div)
+//Si pones  aspect-ratio: 2 / 4; Ancho 1000px, altura 2000px (Suponiendo que es 500px el div)
     aspect-ratio: 3 / 6;
     @include m.telefono { 
         aspect-ratio: 3 / 4;
     }
     @include m.tablet { 
+        // llamamos al mixin con include y llamamos a grid que se hizo de manera personalizada
         @include m.grid(2, v.$separacion);
         aspect-ratio: 16 / 6;
+        // el tamano masppequeno
         background-size: 40%;
         background-position: bottom right;
     }
