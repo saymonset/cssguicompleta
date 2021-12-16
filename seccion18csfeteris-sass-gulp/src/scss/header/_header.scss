@@ -9,6 +9,7 @@
     // referencia del fondo para oscurecer
     position: relative;
     background-repeat: no-repeat;
+    // Esto es para que estire la magen en cada header de la pagina
     background-size: cover;
 
     @include m.telefono{  
@@ -66,6 +67,7 @@
     // Estas imagenes estan en build y debemos ubicarlas
     background-image: url(../img/header_inicio.jpg);
 }
+// una header para cada pagina
 .header-nosotros {
     background-image: url(../img/header_nosotros.jpg);
 }

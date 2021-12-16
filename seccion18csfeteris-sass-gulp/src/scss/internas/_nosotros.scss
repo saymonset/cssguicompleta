@@ -3,6 +3,7 @@
 
 .contenido-nosotros {
     @include m.tablet { 
+        // 2 columnas, una para imagen y la otra para texto en dispositivos grandes
         @include m.grid(2, 2rem);
     }
 
@@ -10,12 +11,17 @@
         margin-bottom: 5rem;
 
         @include m.tablet { 
+            // separacion entre imagen y texto
             margin: 0 2rem 0 0;
         }
 
         img {
+            // rotamos la imagen para que tenga un efecto inclinado
             transform: rotate(-6deg);
+            // con esto tenemos el angulo de la imagen reflejado al lado
             border: 3rem solid v.$blanco;
+            // y la sombra para que se vea con esto tenemos el angulo de la imagen reflejado al lado
+            // Esto es un color oscuro y de transparencia .35  rgb( 0 0 0 / .35);
             box-shadow: 9px 10px 5px -7px rgb( 0 0 0 / .35);
         }
     }
@@ -25,7 +31,9 @@
         blockquote {
             margin: 0;
             padding: 1rem;
+            // Con esto le colocamos la raya con border del lado izquierdo
             border-left: .5rem solid v.$primario;
+            // un poco mas grande que el resto del texto
             font-size: 2rem;
         }
     }

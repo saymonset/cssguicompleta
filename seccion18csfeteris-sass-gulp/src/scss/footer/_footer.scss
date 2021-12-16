@@ -31,8 +31,10 @@
         font-size: 2.4rem;
         color: v.$secundario;
     }
+    // parrafos y enlaces le clocamos la fuente mas grande
     p, a {
         font-size: 2rem;
+        // hay mucha separacion en los parrafos , colocamos margin en 0
         margin: 0;
     }
 
