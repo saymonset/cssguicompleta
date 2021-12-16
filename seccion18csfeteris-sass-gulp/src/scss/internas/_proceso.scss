@@ -2,33 +2,66 @@
 @use 'base/mixins' as m;
 
 .proceso-cafe {
+    // separacion hacia abajo para todos los textos y imagenes y se coloca aqui para que aplique a todos los tamanos, tanto en 
+    // movil como en desktop
     margin-bottom: v.$separacion;
+    // elposicionamiento de las imagenes con texto de la forma que se requiere es mas sencillo 
+    // hacerlo con flexbox
     @include m.tablet { 
+        // imagenes y texto de izquierda a derecha
         display: flex;
         gap: v.$separacion;
+        // para que este alineado verticalmente
         align-items: center;
     }
     &:last-of-type {
+        //Eliminamos para el ultimo margin-bottom. separacion hacia abajo para todos los textos y imagenes y se coloca aqui para que aplique a todos los tamanos, tanto en 
+       // movil como en desktop
         margin-bottom: 0;
     }
+    // como hacemos para qu la imagen este en el lado derecho, en el segundo y en el cuarto
+    //even quere decir todos los numeros pares
+    //el odd s impar
     &:nth-child(even) {
         .texto {
+            // order lo vas a usar unicamente cuando tengas un display flex como padre
+            //el proceso-cafe tiene display flex
+            //Lo unico qu nos interesa es mover el texto izwuierdo
+            // Cuando solamente quieres mover un valor hasta el inicio, se le coloca -1
+            // y garantizamos que este elemento se muestra primero, por eso empujara la imagen y
+            // no es necesario de manejarla
             order: -1;
         }
+        // Mientras alla un display flex como elemento padre, puedes modificar el orden
+        // de los elementos hijos con order y el numero mas bajo, obviamente lo ira
+        // mostrando primero sin necesidad de modificar el htm
+        // coloca la imagen en el orden 2 y el texto en el orden
+        // .texto {
+        //     order: 1;
+        // }
+        // .imagen{
+        //     order:2;
+        // }
     }
+
+    // Con esto forzamos a que mida lo mismo las dos columnas
     .imagen,
     .texto {
         flex: 1;
     }
     .texto {
+        // separacion entre el texto y la imagen
         margin-top: 1rem;
         h3 {
+            // eliminamos el margin hacia abajo y en todos lados
             margin: 0;
             text-align: left;
+            // En moviles, pegamos el texto ala izquierda
             color: v.$primario;
-
+            // Colocamos unalinea por debajo de los textos
             &::after {
                 content: '';
+                // Esto nos va apermitir colocar la linea que esta debaj del texto
                 display: block;
                 width: 50%;
                 height: 5px;
