@@ -10,6 +10,7 @@
 # dependencies
 /node_modules
 /seccion18csfeteris-sass-gulp/node_modules
+/seccion19-delivery/node_modules
 
 # profiling files
 chrome-profiler-events*.json
