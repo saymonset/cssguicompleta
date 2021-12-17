@@ -4,18 +4,36 @@
 .header {
     display: flex;
     flex-direction: column;
+    // separacion de arriba y abajo
     padding: v.$separacion 0;
+    // Esto lo centrara horizontalmente
     align-items: center;
+    // Si es en desktop, colocamos el logo y la navegacion en una fila y separados
     @include m.desktop { 
         flex-direction: row;
         justify-content: space-between;
         
     }
-
+    //  Este & hace referencia a  el elemento .header, y luego colocamos la clase __logo
+     //y cuando se compila, queda como esto: .header__logo
+    //  Escribiendo menos codigo y sacando ventaja mas de scss y cumpliendo el estandar de BEM
+    // El resultado es el que estamos esperando
+    // .header {
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //   }
+    // }
+    // .header__logo {
+    //   width: 30rem;
+    //   margin-bottom: 5rem;
+    // }
     &__logo {
+        // esto es el ancho de logo para que aparezca
         width: 30rem;
+        // Solo en movil va a tener ese margin el boton
         margin-bottom: 5rem;
         @include m.desktop { 
+            // Solo en movil va a tener ese margin el boton, aqui lo removemos
             margin-bottom:0;
         }
     }

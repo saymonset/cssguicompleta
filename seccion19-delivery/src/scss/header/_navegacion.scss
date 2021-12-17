@@ -5,10 +5,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    // separacion de cadqa uno de los links, tambien da separacion hacia abajo
     gap: 2rem;
+    // La navegacion, como tiene display flex el padre, entonces los hijos que
+    // es la navegacion, toma los espacios que requiere
+    //width: 100%; Por eso forzamos a que tome todo el ancho disponible
     width: 100%;
     @include m.desktop { 
+        //En pantallas grandes quitamos esto
+        // width: 100%; Por eso forzamos a que tome todo el ancho disponible
+        //Con esto width: auto;
         width: auto;
+        // y el flex direction pasa a ser row para que se muestre de izquierda  a derecha
         flex-direction: row;
     }
 
@@ -16,7 +24,10 @@
         font-size: 2rem;
         font-weight: 700;
         color: v.$negro;
+        // El resultado final al compilar es navegacion__link--registrar que creamos
+        // el modificador de BEM, cumpliendo con su sintaxis
         &--registrar {
+            // Aqui incluimos un mixin m.boton
             @include m.boton(v.$primario, v.$blanco);
         }
     }

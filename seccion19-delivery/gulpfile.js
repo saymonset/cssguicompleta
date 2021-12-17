@@ -16,6 +16,7 @@ function css( done ) {
     src('src/scss/app.scss')
         .pipe( sourcemaps.init() )
         .pipe( sass() )
+        // Comentamos esta linea para no hacer el minificado mientras creamos o desarrollamos la pagina
         // .pipe( postcss([ autoprefixer(), cssnano() ]) )
         .pipe( postcss([ autoprefixer() ]) )
         .pipe( sourcemaps.write('.'))
