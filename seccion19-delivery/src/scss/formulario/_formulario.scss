@@ -10,9 +10,13 @@
     }
     &__contenido {
         background-color: v.$primario;
+        // separamos el texto de las esquinas
         padding: v.$separacion;
         display: flex;
         flex-direction: column;
+        // justify-content  nos permite alinear contenido de arriba hacia abajo
+        
+        // como space-between deja mucho espacio a medias , l mejor opcion es justify-content: space-evenly;
         justify-content: space-evenly;
     }
     &__heading {
@@ -21,35 +25,45 @@
 
     }
     &__campo {
+        // separacion de cada input
         margin-bottom: 1rem;
     }
     &__label {
+        // Toma todo el ancho disponible, y empujando el salto de linea
         display: block;
         text-transform: uppercase;
         color: v.$blanco;
         margin: 1rem 0;
     }
     &__input {
+        // el input lo obligamos a que tome todo el espacio disponible
         width: 100%;
+        // Colocamos padding para hacerlo mas grande
         padding: 1.5rem;
+        // Todos los imputs tienen border, por eso lo eliminamos
         border: none;
     }
     &__submit {
         margin-top: 2rem;
         @include m.boton(v.$secundario, v.$blanco);
         @include m.tablet { 
+            // hacemos que el boton abarque el 100% en dispositivos grandes para que abarque 
+            // el resto de los inputs
             width: 100%;
         }
     }
-
+//   evitamos la anidacion &__imagen-contenedor, &__imagen
     &__imagen-contenedor {
         margin-top: v.$separacion;
+        // con esto centramos la imagen
         display: flex;
         justify-content: center;
     }
     &__imagen {
+        // forzamos a que la imagen mida menos de ancho
         width: 30rem;
         @include m.desktop { 
+            // si es desktop, dejamos qu l width crezca un 100%
             width: 100%;
         }
     }
