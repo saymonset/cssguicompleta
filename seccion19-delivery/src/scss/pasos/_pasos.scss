@@ -5,17 +5,22 @@
     margin-top: 5rem;
 
     &__wave {
+      // margin-bottom:-1px  Quita la linea de separacion de la imagen de olas y la seccion de abajo
         margin-bottom: -1px;
     }
     &__contenido {
         background-color: v.$primario;
+        // margin-top:-1px  Quita la linea de separacion de la imagen de olas y la seccion de arriba
+        // que es la imagen de olas
     }
     &__heading {
         text-align: center;
         color: v.$blanco;
 
         &--descripcion {
+            // mas pequeno el texto
             font-size: 1.8rem;
+            // En su propia linea
             display: block;
         }
     }
@@ -26,9 +31,16 @@
     }
 
     &__imagen {
+        // para darle mas realismo a la animacion
         transition-property: transform;
+        // la duracion a la properties transform 
         transition-duration: 300ms;
         &:hover {
+            // Aqui el efcto o animacion de rotar y de crecer con scale
+            // Con scale 1.2 crece la imagen
+            //1 se mantiene igual como 1
+            // mayor a 1 va a incrementar como 1.2
+            // menor  a 1 va a disminuir como 0.2
             transform: rotate(-4deg) scale(1.2);
         }
     }
