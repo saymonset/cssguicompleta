@@ -5,8 +5,11 @@
     background-color: v.$secundario;
     padding: 2rem;
     margin-bottom: 2rem;
+    // esquinas redndeadas
     border-radius: 1rem;
+    // el color del texto del bloque va hacer decolor blanco
     color: v.$blanco;
+    // El ultimo no va a tener el margin hacia abajo
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -32,35 +35,66 @@
     }
 
     &__header {
+        // Nos las separa en dos columnas porque muestra todos sus elementos de izquierda a derecha
         display: flex;
+        // un poco de separacion por cada elemento hijo
         gap: 2rem;
+        // Lo alineamos verticalmente 
         align-items: center;
     }
+
+    // Al div testimonial__imagen es la ue estas redondeando.. y aqui esta el truco para
+    // que se vea la imagen redondeada
     &__imagen {
+        // con esto, la imagen la hacemos mas pequena
         flex-basis: 10rem;
+        // aqui redondeamos la imagen
+        //Por si solo no funciona
         border-radius: 50%;
+        // Esto lo que hace es ocultar lo que rebase el div, como el div tiene
+        // esquinas redondeadas, lo que rebase que es las puntas de la imagen cuadrada,
+        // no se va a mostrar
         overflow: hidden;
     }
+    //testimonial__texto
     &__autor {
+    // testimonial__autor
         color: v.$blanco;
         font-weight: bold;
+        // aqui eliminamos un poquito de margin arriba y abajo, el resto es cero
         margin: .5rem 0;
     }
-
+    
+    //testimonial__texto
     &__texto {
+        // mas grande
         font-size: 2rem;
+        // mas pequeno el interlineado
         line-height: 1.5;
+        // separacion de arriba con la imagen y abajo
         margin: 2rem 0 0 0;
+        // se agrega un poco de padding del lado izquierdo porue vaa ir una comilla
         padding-left: 3rem;
+        //Position Relativa y absoluta
+        // Va a posicionar otro elemento basado en la ubicacion actual de la ubicacion que tenga 
+    // el elemento que estas poniendo como relativo
         position: relative;
 
         &::before {
+            // Aqui agregamos las comillas de los parrafos
             content: ' " ';
+            // Necesitamos que la comilla sea mas grande que el texto
             font-size: 10rem;
+            // Va a posicionar otro elemento basado en la ubicacion actual de la ubicacion que tenga 
+            // el elemento que estas poniendo como relativo
             position: absolute;
             left: 0;
+            // con top -4rem lo empuja un poco hacia arriba
             top: -4rem;
+            // opacity acepta valores de 0 a 1, siendo 0 totalmente trasnparente
+            // aqui colocamos una trasparencia del 20%
             opacity: .2;
+            // Aqui le ca,bamos el tipo de letra a la comilla
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
     }

@@ -2,6 +2,7 @@
 @use 'base/mixins' as m;
 
 .testimoniales {
+    // 5rem arriba y abajo y 0 a los lados de separacion
     padding: v.$separacion 0;
 
     &__heading {
