@@ -47,6 +47,7 @@
 
     &__copyright {
         background-color: v.$primario;
+        // Los parrafo siempretienen un marge, colocamos el margen de abajo en cero para eliminarlo
         margin: 0;
         color: v.$blanco;
         text-align: center;
