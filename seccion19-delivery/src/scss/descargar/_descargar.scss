@@ -6,15 +6,20 @@
     padding: v.$separacion 0;
     &__grid {
         display: flex;
+        // en movil primero se carga los textos e imagenes pequenas y luego a imagen grande
         flex-direction: column-reverse;
         @include m.tablet { 
+            // aqui ignora las propiedades de flexbox que no son compatible con grid
             @include m.grid(2, v.$separacion);
         }
     }
 
     &__imagen {
+        // acortamos la imagen
         width: 50%;
+        // la centramos
         margin: 5rem auto 0 auto;
+        // le damos una duracion a transform para que tome n buen efecto
         transition-property: transform;
         transition-duration: 300ms;
 
@@ -23,6 +28,8 @@
         }
 
         &:hover {
+            // le damos unefecto al posicionar el cursor aqui
+            // con scale , crecemos la imagen
             transform: rotate(4deg) scale(1.2);
         }
     }
