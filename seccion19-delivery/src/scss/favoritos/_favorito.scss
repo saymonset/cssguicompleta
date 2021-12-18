@@ -5,6 +5,11 @@
     background-color: v.$blanco;
     padding: 4rem;
     margin-bottom: 2rem;
+    // Para la sombra. Horzontal primer valor, vertical segundo valor, Tercer valor 2.6rem es que tanto va 
+    // a medir la sombra hacia afuera, el -0.8rem es la proyeccion de la sombra y de ultimo
+    // tenemos el colorvde la sombra darken( v.$grisClaro, 30% );
+    //Con darken es funcion de scss le damos al mismo color de fondo algo mas oscuro para que se diferencie la sombra
+    //que color quieres oscurecer y el porcentaje que lo quieres oscurecer
     box-shadow: 0px 0px 2.6rem -0.8rem darken( v.$grisClaro, 30% );
     border-radius: 1rem;
 
@@ -12,14 +17,20 @@
         margin-bottom: 0;
     }
     @include m.tablet { 
-        margin-bottom: 0;
+        // el margen en tablet va a ser cero porque en _favoritos.scss ya tiene un gapde 4rem
+        // @include m.tablet { 
+        //     @include m.grid(2, 4rem);
+        // }
+                margin-bottom: 0;
     }
 
     &__grid {
         @include m.tablet { 
             display: grid;
+            // aqui el logotipo vaa tomar el 25% del espacio y el contenido el 75%
             grid-template-columns: 2fr 3fr;
             gap: 2rem;
+            // centrados verticalmente
             align-items: center;
         }
 
@@ -31,16 +42,24 @@
     }
 
     &__imagen {
+        // Solo tomara 200ppx max de width
         max-width: 20rem;
+        // centramos en moviles pequenos
         margin: 0 auto 2rem auto;
     }
 
     &__contenido {
+        // tex-align: center, no es suficiente para centrar el contenido por la imagen
+        // por eso usamos display:flex
+        // el contenido lo alineamos con flex y columnas su direccion
         display: flex;
         flex-direction: column;
+        // Con esto alineamos horizontalmente
         align-items: center;
     
         @include m.tablet { 
+            // No necesitamos align-item:center heredado de movil first, necesitamos 
+            // cambiarlo por 
             align-items: flex-start;
         }
     }
