@@ -9,6 +9,7 @@
         text-align: center;
     }
     &__grid {
+        // En testimoniaes , dividimos cada testimonial en columnas 5
         @include m.tablet { 
             @include m.grid(5, 2rem);
         }

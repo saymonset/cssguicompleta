@@ -14,14 +14,22 @@
         margin-bottom: 0;
     }
 
+
+    // Aqui colocamos cada columna testimonial en varias formas para 
+    // que se vea un efecto irregular las tarjetas
+    // Todo esto en tabletas
     @include m.tablet { 
+        // Al final siempre agrega un poco mas de espacio y le quitamos el margin bottom
         margin-bottom: 0;
         
+        // El primer testimonial va a ser desde la columna 1 hasta la columna 4
+        // GRID crece los rows segun sea necesario
         &:nth-child(1) {
             grid-column: 1 / 4;
         }
 
         &:nth-child(3) {
+            // Ocupo las columnas del 5 al 6 columns pero me extiendo del 1 al 3 columnas
             grid-column: 5 / 6;
             grid-row: 1 / 3;
         }
