@@ -5,6 +5,7 @@
     padding: v.$separacion 0;
     &__heading {
         text-align: center;
+        // color texto
         color: v.$secundario;
     }
     &__grid {
@@ -15,8 +16,13 @@
 
     &__contenido {
         display: flex;
+        // Muestra por defecto de izquierda a ddercha, tres columnas de izq a derecha en  una sola fila
+        // por eso colocamos column para que sea tres columnas
         flex-direction: column;
+        
+        // quiero alinearlo verticalmente que tenga la mismqa distribucion
         justify-content: space-evenly;
+        //Quero que el boton este del lado izquierdo 
         align-items: flex-start;
     }
     &__texto {
@@ -24,6 +30,8 @@
         color: v.$secundario;
     }
     &__enlace {
+        // Este boton toma todo el espacio disponible porque no hay ningun diplay:flex
+        // Para que solo tome una parte de ancho, colocamos su contenedor display:flex
         @include m.boton(v.$primario, v.$blanco);
     }
 }
