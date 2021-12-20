@@ -50,11 +50,14 @@
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
 }
-
+// Este mixin s para una imagen de fondo
 @mixin bgImage($url, $colorDegradado) {
+    // inicia en este color $colorDegradado y termina en este color $colorDegradado cubriendo todo el
+    // espacio disponible
     background-image: linear-gradient( $colorDegradado 0%, $colorDegradado 100% ), url( $url );
     background-repeat: no-repeat;
     background-size: cover;
+    // Internamente dentro de la imagen , colocamos que se centre yse vea la persona
     background-position: top center;
 }
 

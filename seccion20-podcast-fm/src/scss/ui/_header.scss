@@ -2,13 +2,18 @@
 @use 'base/mixins' as m;
 
 .site-header {
+    // Este mixin toma dos valores, un es la imagen y el otro es el degradado
+    // Este v.$secundarioOpacity tiene su color y una tarsnparencia. $secundarioOpacity: rgb( 57 70 89 / .7 );
     @include m.bgImage('../img/header.jpg', v.$secundarioOpacity );
     padding: 5rem 0;
 
     .logo {
+        // Con esto, forzamos a logo que sea mas pequeno
         max-width: 20rem;
+        // Con esto centramos horizontalmente
         margin: 0 auto;
         @include m.tablet { 
+            // Si estamos en un dispositivo mas grande, la imagen debe estar de  lado izquierdo
             margin: 0;
         }
     }
@@ -23,9 +28,12 @@
             font-size: 4.5rem;
             @include m.tablet { 
                 font-size: 6rem;
+                // Para que el texto no se corte poque es muy poco espacio ensu contenedor, lo alargamos con max-width:50%
+                // Toma el 50% del contenedor en lo anch y crea los saltos de linea necesarios
                 max-width: 50%;
             }
             @include m.desktop { 
+                // Corta el texto un pco antes para ue no tome la mitad de la pantalla
                 max-width: 40%;
             }
             
