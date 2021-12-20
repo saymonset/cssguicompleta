@@ -4,6 +4,7 @@
 .crea-grid {
     @include m.tablet { 
         @include m.grid(2, 2rem);
+        // align-items: center; permite alinear verticalmente tanto en flexbox como en grid
         align-items: center;
     }
 
