@@ -19,14 +19,22 @@
     @include m.tablet { 
         flex-direction: row;
         max-width: 80rem;
+         //queda  mejor centrado con  margin-inline: auto;
         margin-inline: auto;
+        //con margin-block es un marge arriba y abajo, solo queremos arriba separacion margin-block-start
         margin-block-start: 10rem;
     }
 
     .plan {
+        // Con flexdirection row en tablets o dispositivos grandes
+        //, y display flex como padre, tomara sus hijos solo el espacio que requieren
+        //Si colocamos flex-grow: 1; Crecera en prporcion de 1 en espacio diponible
+        //y el color de fondo blanco se expandira
         flex-grow: 1;
         background-color: v.$blanco;
+        // en tos lops de los paddings iran las imagenes
         padding: 16rem 4rem 4rem 4rem;
+        //Una linea de separacion abajo y separa cada uno dd los planes
         border-bottom: 1px solid #e1e1e1;
         @include m.tablet { 
             border: none;
@@ -75,11 +83,23 @@
                 // order, su valor inicial es cero y es definido por el lugar que tiene en html
                 //Con order: unset, elimina esa propiedad y lo coloca como esta en el html 
                 order: unset;
+                //Lo mismo abajo sepuede colocar margin:-5rem 0 
+                //margin-block:-5rem  genera el mismo resultado
+                //con esto la imagen lo hace un poco hacia arriba
                 margin-top: -5rem;
+                //margin-bottom: -5rem; con esto lo empujamos hacia abajo
                 margin-bottom: -5rem;
+                //esquinas redondeadas
                 border-radius: 2rem;
+                //los 7rem sale de los 2rem que ya teniamos mas los 5rem que se estan jalando hacia arriba margin-top: -5rem;
                 background-position: 50% 7rem;
+                //Esto margin-bottom: -5rem; resta -5, por eso lo volvemos a sumar
                 padding-top: calc(16rem + 5rem); 
+                // z-index es como que colocaras una gran cantidad de cartas para jugar, una arriba
+                // de la otra, la que este mas atras tiene el z-index mas bajo, por eso se muestra atras.
+                // Las que esta adelante tiene un z-index mas alto
+                // Queremos que el elemento negocio siempre este adelante de los elemeto INICIO y PRO
+                //por eso colocamos z-index = 100
                 z-index: 100;
             }
         }

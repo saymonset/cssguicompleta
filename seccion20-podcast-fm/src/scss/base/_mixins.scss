@@ -64,6 +64,7 @@
 @mixin iconoBg($url) {
     background-image: url($url);
     background-repeat: no-repeat;
+    // Coloca la imagen 50% horizontal y 20px de separacion arriba 
     background-position: 50% 2rem;
     background-size: 10rem;
 }
