@@ -62,11 +62,18 @@
         }
 
 
+        // Su padre .nuestros-planes esta en flex, suz hijos , en este caso
+        //.negocio setamos con las propiedades de flex, como negocio es el mas caro, lo queremos
+        //mostrar de primero con order -1
         &.negocio {
             background-color: v.$primario;
+            //Se muetra de primero con order -1
             order: -1;
             @include m.iconoBg('../img/icono_negocio.svg');
+            // Si es un dispositivo grande, me gustaria que producto estuviera en el medio
             @include m.tablet { 
+                // order, su valor inicial es cero y es definido por el lugar que tiene en html
+                //Con order: unset, elimina esa propiedad y lo coloca como esta en el html 
                 order: unset;
                 margin-top: -5rem;
                 margin-bottom: -5rem;
