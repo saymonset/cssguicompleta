@@ -4,6 +4,7 @@
 .destinos {
 
     &__grid {
+        // create una columna, separacion 2 rem
         @include m.grid(1, 2rem);
         @include m.tablet { 
             @include m.grid(2, 2rem);
@@ -24,6 +25,7 @@
         width: 14rem;
     }
 
+    // todos los parrafos tienen margin, se lo quitamos
     &__nombre, 
     &__distancia {
         margin: 0;

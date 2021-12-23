@@ -17,6 +17,8 @@ a {
     text-decoration: none;
 }
 
+// con $=, esto va a buscar cualquier nombre, pero que finalize en __heading
 [class$="__heading"] {
+    // le aplicamos un margin 2rem arriba y abajo y 0 izq y der
     margin: 2rem 0;
 }
