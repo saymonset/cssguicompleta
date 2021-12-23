@@ -7,8 +7,16 @@
     &__grid {
 
         display: grid;
+        // hay que agregar un ancho fijo para cada 
+        //columna(30rem) para la barra horizontal y no en fr
+  
         grid-template-columns: repeat(4, 30rem);
         column-gap: 4rem;
+              // overflow:hidden; ocultara lo que sobre sale del contenddor. 
+        //overflow-y:hidden, overflow-x:scroll, hacen una barra horizontal sin afectar el resto de la pagina
+        //Para alinear la barra es con scroll-snap-align:start, alinea lado izquierdo
+        //scroll-snap-align:start, alinea lado derecho
+        //scroll-snap-align:start, alinea centrado
         @include m.scrollHorizontal;
         @include m.tablet { 
             @include m.grid(2, 2rem);
