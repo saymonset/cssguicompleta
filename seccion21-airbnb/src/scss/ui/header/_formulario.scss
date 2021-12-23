@@ -2,20 +2,26 @@
 @use 'base/mixins' as m;
 
 .formulario {
+    // centrado
     margin: 5rem auto 2rem auto;    
     background-color: v.$blanco;
     border-radius: 5rem;
+    // sombra, 0px horizontal, 3px vertical porque da una sombra hacia abajo,
     box-shadow: 0px 3px 7px 0px v.$gris;
     padding: 3rem 0;
 
     @include m.desktop { 
         display: flex;
         justify-content:space-between;
+
+    //    No tomes todo el espacio del contenedor
+    //El contenedor mide 1200px, entonces le ponemos un max width de 900px como maximo y con esto lo centra
         max-width: 90rem;
         padding: 0;
     }
 
     &__campo {
+        // con esto el formulario es mas alto
         padding: 1rem 2rem;
         display: flex;
         flex-direction: column;
@@ -29,6 +35,7 @@
         &:hover {
             background-color: #F0F0F0;
             border-radius: 5rem;
+            //rgb con un color de fondo y su transparencia es de 40%
             box-shadow: 0px 6px 20px rgb(0 0 0 / 40%);
         }
     }
@@ -43,10 +50,13 @@
         color: v.$gris;
     }
     &__submit {
+        // con display: block; tomara todo el espacio disponible
         display: block;
         height: 4rem;
         border: none;
         border-radius: 2rem;
+        // el gradient y le colocamos como valor circle para que tome como un circulo
+        //Su color origen es del 0% y finalizamos con el color del 100%
         background-image: radial-gradient( circle, rgb(255, 56, 92) 0%, v.$secundario 100%  );
         padding: 0 2rem;
         color: v.$blanco;
