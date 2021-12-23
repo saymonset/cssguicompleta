@@ -2,9 +2,11 @@
 @use 'base/mixins' as m;
 
 .barra {
+    // con esto ocultamos la barra en dispositivos pequenos
     display: none;
 
     @include m.tablet { 
+        // con esto mostramos la barra en dispositivos grandes
         display: flex;
         justify-content: space-between;
         align-items: center;

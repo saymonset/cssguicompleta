@@ -3,7 +3,9 @@
 
 .header {
     background-image: url(../img/header.jpg);
+    // todo el espacio disponible
     background-size: cover;
+    // Muestra la imagen a partir del centro de si misma
     background-position: center;
     padding: 3rem 0 20rem 0;
 
