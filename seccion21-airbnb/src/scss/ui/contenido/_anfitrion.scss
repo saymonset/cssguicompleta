@@ -4,11 +4,18 @@
 .anfitrion {
     color: v.$blanco;
     display: grid;
+    // dearriba hacia abajo cion dos filas
     grid-template-rows: repeat(2, 1fr);
     row-gap: 15rem;
     padding: 5rem;
+    // to bottom va de arriba hacia abajo
+    // El colornegro inici en 0% y finaliza en el 50%, Luego de hay es 50% transparente
+    //Esa mitad de abajo que es trasparente, colocamos la imagen
     background-image: linear-gradient( to bottom, v.$negro 0%, v.$negro 50%, transparent 50%), url(../img/anfitrion.jpg);
+    // aqui cambiamos la imagen, el primer background es 100%, la segunda que es la imagen la reducimos a 60rem
     background-size: 100%, 60rem;
+    //El primer imagen degradado, colocamos cualquier position, pero la segunda que es la que nos interesa va
+    //de centro y la parte inferior
     background-position: center, center bottom;
     background-repeat: no-repeat;
  
@@ -18,9 +25,15 @@
     }
 
     @include m.tablet {
+        // aqui no es necesario dos row que se eztablecio en movilfirst, se la quitamos con unset
         grid-template-rows: unset;
+        // Esto va  aaser de izuierda a dercha la primera imagen
+        //El degradado del color es la diferencia de 45% al 55%
         background-image: linear-gradient(to right, v.$negro 0%, v.$negro 45%, transparent 55%), url(../img/anfitrion.jpg);
+        // auto es el tamano natural de la imagen
+        //100% forzamos que la imagen se estire el 100% del div
         background-size: 100%, auto;
+        //El degraddo es centrado , la segunda imagen es 50% 30% 
         background-position: center, 50% 30%;
         padding: 15rem 5rem;
     }

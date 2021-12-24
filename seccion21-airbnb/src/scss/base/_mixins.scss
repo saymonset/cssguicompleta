@@ -49,6 +49,7 @@
 @mixin scrollHorizontal {
     overflow-y: hidden;
     overflow-x: scroll;
+    // izquierda a derecha y unicamente 
     scroll-snap-type: x mandatory;
 
     // Quiero aplicar este codigo css al primer nivel de hijo y cualquier elemento que sea ese hiijo
